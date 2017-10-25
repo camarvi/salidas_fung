@@ -29,32 +29,71 @@ class Salidas  extends DataObject {
 
     //lista de categorias por orden alfabetico
 
-    public static function listaCentros() {
+    public static function NuevaSalida() {
 
         $conn=parent::connect();
-        $sql=SQL_LISTACENTROS;
-   
-   
+        $sql=SQL_NUEVA_SALIDA;
+        
+             
         try {
             $st=$conn->prepare($sql);
-           
+          
+            $st->bindValue(":USUARIO",$this->data["USUARIO"], PDO::PARAM_STR);
+            $st->bindValue(":CENTRO",$this->data["CENTRO"], PDO::PARAM_STR);
+            $st->bindValue(":QUIEN",$this->data["QUIEN"], PDO::PARAM_STR);
+            $st->bindValue(":SEXO",$this->data["SEXO"], PDO::PARAM_STR);
+            $st->bindValue(":FECHA",$this->data["FECHA"], PDO::PARAM_STR);
+            $st->bindValue(":MATERIAL",$this->data["MATERIAL"], PDO::PARAM_STR);
+            $st->bindValue(":CANTIDAD",$this->data["CANTIDAD"], PDO::PARAM_STR); 
+            $st->bindValue(":RESIDENCIA",$this->data["RESIDENCIA"], PDO::PARAM_INT); 
+            $st->bindValue(":OBSERVACIONES",$this->data["OBSERVACIONES"], PDO::PARAM_INT);
             
             $st->execute();
-             $lcentros=array();
-               foreach ($st->fetchAll() as $row) {
-                   $lcentros[]=new Centros($row);
-               }
+            parent::disconnect($conn);
 
-               parent::disconnect($conn);
-               return array($lcentros);
-            } catch (PDOException $e) {
-                parent::disconnect($conn);
-                die("Query failed: " . $e->getMessage());
-            }
+      
+          $conn=null;
 
 
+        } catch (PDOException $e) {
+            parent::disconnect($conn);
+            die ("Query failed: " . $e->getMessage());
+
+        }
+
+        
+        
 
     }
+    
+    
+    
+    public static function EliminaSalida($cod) {
 
+      $conn=parent::connect();
+      $sql=SQL_ELIMINA_SALIDA;
+      
+      try {
+               $st=$conn->prepare($sql);
+               $st->bindValue(":cod",$cod,PDO::PARAM_INT);
+               $st->execute();
+             
+               parent::disconnect($conn);
+             
+        } catch (PDOException $e) {
+
+            parent::disconnect($conn);
+            die("Query failed: " . $e->getMessage());
+        }
+
+     }        
+
+     
+     
+     
+     
+     
+     
+     
 }
 ?>
