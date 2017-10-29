@@ -26,7 +26,7 @@ and open the template in the editor.
     <body>  
 
 
-     <div class="container" style="margin-top: 5%;">
+    <div class="container" style="margin-top: 3%;">
     <div class="col-md-12">
         <div class="panel panel-primary">
             <div class="panel-heading">Datos Usuario</div>
@@ -55,25 +55,11 @@ and open the template in the editor.
                        
                 </div>
                
-                
-                <!-- Content Field -->
-                <div class="row">
-                    <div class="form-group col-xs-12">
-                        <label for="password"><span class="text-danger" style="margin-right:5px;">*</span>Contrase&ntilde;a:</label>
-                        <div class="input-group">
-                            <input class="form-control" id="password" type="password" name="password" placeholder="contrase&ntilde;a" required/>
-                            <span class="input-group-btn">
-                                <label class="btn btn-primary"><span class="glyphicon glyphicon-lock" aria-hidden="true"></label>
-                            </span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                
+              
                 <!-- Login Button -->
                 <div class="row">
-                    <div class="form-group col-xs-4">
-                        <button class="btn btn-primary" type="submit">Aceptar</button>
+                    <div class="form-group col-xs-12">
+                        <button class="btn btn-primary col-xs-offset-5 col-xs-1" type="submit">Buscar</button>
                     </div>
                 </div>
                 
@@ -82,8 +68,44 @@ and open the template in the editor.
             
         </div>
     </div>
-</div>   
         
+      <div class="panel panel-primary">
+            <div class="panel-heading">Resultados</div>
+            <div class="panel-body">
+                
+             <div class="table-responsive">
+               <table class="table table-hover table-bordered">
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>2º Apellido</th>
+                    <th>Móvil</th>
+                    <th>Email</th>
+                    <th>Dirección</th>
+                 </tr>
+                </thead>
+                <tbody>
+                 <tr>
+                   <td>Rocky</td>
+                   <td>Balboa</td>
+                   <td>López</td>
+                   <td>666 666 666</td>
+                   <td>Rocky@balboa.es</td>
+                   <td>Calle la paz</td>
+                </tr>
+                <tr>
+                   <td>Indiana</td>
+                   <td>Jones</td>
+                   <td>Perez</td>
+                   <td>666 777 777</td>
+                   <td>indiana@jones.es</td>
+                   <td>Calle abastos</td>
+                </tr>
+               </tbody>
+              </table>
+            </div>
         
+       </div>   
     </body>   
 </htm>
