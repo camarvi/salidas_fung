@@ -21,6 +21,34 @@ and open the template in the editor.
     
 
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-1.7.1.min.js"></script>
+   
+    <script type="text/javascript">        
+        $('document').ready(function(){
+         $('#buscar').click(function(){
+              alert("DENTRO DE JQUERY");
+              var nusha=$('#nusha').val();
+              var ape1=$('#ape1').val();
+              var ape2=$('#ape2').val();
+            
+              jQuery.post("jbusca_usuario.php",{
+                 nusha:nusha,
+                 ape1:ape1,
+                 ape2:ape2
+                
+            }, function(data,textStatus){
+               
+                    alert ("Datos Modificados");
+                }
+                
+            });
+         });
+         
+     });
+        
+    </script>    
+  
+    
     </head>    
     
     <body>  
@@ -33,7 +61,7 @@ and open the template in the editor.
             <div class="panel-body">
             
             <!-- Login Form -->
-            <form class="form-horizontal" role="form">
+            <form class="form-horizontal" role="form" action="" method="POST">
             
             <!-- Username Field -->
                 
@@ -45,12 +73,12 @@ and open the template in the editor.
                     
                     <label for="nombre" class="col-xs-1"><span style="margin-right:5px;">Apellido1:</span></label>
                     <div class="col-xs-3">
-                    <input class="form-control" id="nombre" type="text" name="nombre" placeholder=""/>
+                    <input class="form-control" id="ape1" type="text" name="ape1" placeholder=""/>
                     </div>   
                     
                     <label for="apellido" class="col-xs-1"><span style="margin-right:5px;">Apellido2:</span></label>
                     <div class="col-xs-3">
-                    <input class="form-control" id="apellido" type="text" name="apellido"/>
+                    <input class="form-control" id="ap2" type="text" name="ap2"/>
                     </div>
                        
                 </div>
@@ -59,13 +87,15 @@ and open the template in the editor.
                 <!-- Login Button -->
                 <div class="row">
                     <div class="form-group col-xs-12">
-                        <button class="btn btn-primary col-xs-offset-5 col-xs-1" type="submit">Buscar</button>
+                      <button type="button" id="buscar" name="buscar" value="buscar" class="btn btn-primary col-xs-offset-5 col-xs-1">
+                          BUSCAR
+                      </button>    
                     </div>
                 </div>
                 
             </form>
             <!-- End of Login Form -->
-            
+                 
         </div>
     </div>
         

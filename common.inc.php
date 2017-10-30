@@ -1,10 +1,16 @@
 <?php
 
 require_once ('config.php');
-require_once ('classes/Ficha.class.php');
+require_once ('classes/Bdu.class.php');
+require_once ('classes/Centros.class.php');
+require_once ('classes/Material.class.php');
+require_once ('classes/Quien.class.php');
+require_once ('classes/Residencias.class.php');
+require_once ('classes/Salidas.class.php');
+require_once ('classes/Sexo.class.php');
+require_once ('classes/Usuarios.class.php');
 
-
-
+  
 
     function displayPageHeader($pageTitle,$membersArea=false){
 ?>

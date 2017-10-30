@@ -15,22 +15,13 @@ class Usuarios  extends DataObject {
     //put your code here
     protected  $data=array(
         
-        "NUHSA"=>"",
-        "CLAMED"=>"",
-        "ANIO"=>"",
-        "MES"=>"",
-        "DIA"=>"",
-        "APE1"=>"",
-        "APE2"=>"",
         "NOMBRE"=>"",
-        "IDENTIFICADOR"=>"",
-        "TELEFONO"=>"",
-        "MOVIL"=>""
+        "PERFIL"=>"",
      );    
 
     //lista de categorias por orden alfabetico
 
-   public static function getUsuario($nuhsa) {
+   public static function getUsuario($cod) {
 
         $conn=parent::connect();
         $sql=SQL_BUSCA_USUARIO;
