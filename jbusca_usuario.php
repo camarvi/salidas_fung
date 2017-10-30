@@ -1,11 +1,15 @@
 <?php
 
-require_once ("plantilla.php");
-require_once ("common.inc.php");
+//require_once ("plantilla.php");
+//require_once ("common.inc.php");
 
-$nuhsa=$_POST['vnusha'];
-$ape1=$_POST['vape1'];
-$ape2=$_POST['vape2'];
+$nuhsa=$_POST['nuhsa'];
+$ape1=$_POST['ape1'];
+$ape2=$_POST['ape2'];
+
+
+echo "DATOS PASADOS";
+
 
 
 ?>

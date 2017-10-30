@@ -23,33 +23,42 @@ and open the template in the editor.
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-1.7.1.min.js"></script>
    
+    
+       <script type="text/javascript">        
+      $('document').ready(function(){
+       
+         $("#buscar").click(function(){
+              alert("DENTRO DE JQUERY");
+             var nuhsa=$('#nuhsa').val();
+             var ape1=$('#ape1').val();
+             var ape2=$('#ape2').val();
+            
+             $.post("jbusca_usuario.php",{
+                 nusha:nusha,
+                 ape1:ape1,
+                 ape2:ape2},
+                function(data,estado){
+                   if (estado='succes'){
+                       alert ('Datos Modificados');
+                   } 
+                });
+       });
+       
+    });   
+        
+    </script>    
+    
+    
+    
+    
     <script type="text/javascript">        
-       $(document).ready(function(){
-          $('#modificar').click(function(){
-             alert("modificar"); 
-          });    
-            
-            
-      //   $("#buscar").click(function(){
-      //        alert("DENTRO DE JQUERY");
-     //         var nusha=$('#nusha').val();
-      //        var ape1=$('#ape1').val();
-      //        var ape2=$('#ape2').val();
-      //      
-      //        jQuery.post("jbusca_usuario.php",{
-      //           nusha:nusha,
-     //            ape1:ape1,
-     //            ape2:ape2
-                
-       //     }, function(data,textStatus){
-               
-       //             alert ("Datos Modificados");
-       //         }
-                
-       //     });
-        // });
+      $('document').ready(function(){
+       
+         $("#modificar").click(function(){
+              alert("DENTRO DE JQUERY");
+                });
+       });
          
-     });
         
     </script>    
   
@@ -73,7 +82,7 @@ and open the template in the editor.
                 <div class="form-group col-xs-12">
                     <label for="nuhsa" class="col-xs-1"><span style="margin-right:5px;">Nuhsa:</span></label>
                      <div class="col-xs-3">
-                    <input class="form-control" id="usuario" type="text" name="nuhsa" placeholder="nuhsa"/>
+                    <input class="form-control" id="nuhsa" type="text" name="nuhsa" placeholder="nuhsa"/>
                     </div> 
                     
                     <label for="nombre" class="col-xs-1"><span style="margin-right:5px;">Apellido1:</span></label>
@@ -106,7 +115,9 @@ and open the template in the editor.
                  
         </div>
     </div>
-        
+         <span id="resultado" name="resultado">
+                    
+                </span> 
       <div class="panel panel-primary">
             <div class="panel-heading">Resultados</div>
             <div class="panel-body">
@@ -140,6 +151,7 @@ and open the template in the editor.
                    <td>indiana@jones.es</td>
                    <td>Calle abastos</td>
                 </tr>
+              
                </tbody>
               </table>
             </div>
