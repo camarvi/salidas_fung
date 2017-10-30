@@ -24,25 +24,30 @@ and open the template in the editor.
     <script src="js/jquery-1.7.1.min.js"></script>
    
     <script type="text/javascript">        
-        $('document').ready(function(){
-         $('#buscar').click(function(){
-              alert("DENTRO DE JQUERY");
-              var nusha=$('#nusha').val();
-              var ape1=$('#ape1').val();
-              var ape2=$('#ape2').val();
+       $(document).ready(function(){
+          $('#modificar').click(function(){
+             alert("modificar"); 
+          });    
             
-              jQuery.post("jbusca_usuario.php",{
-                 nusha:nusha,
-                 ape1:ape1,
-                 ape2:ape2
+            
+      //   $("#buscar").click(function(){
+      //        alert("DENTRO DE JQUERY");
+     //         var nusha=$('#nusha').val();
+      //        var ape1=$('#ape1').val();
+      //        var ape2=$('#ape2').val();
+      //      
+      //        jQuery.post("jbusca_usuario.php",{
+      //           nusha:nusha,
+     //            ape1:ape1,
+     //            ape2:ape2
                 
-            }, function(data,textStatus){
+       //     }, function(data,textStatus){
                
-                    alert ("Datos Modificados");
-                }
+       //             alert ("Datos Modificados");
+       //         }
                 
-            });
-         });
+       //     });
+        // });
          
      });
         
@@ -87,9 +92,12 @@ and open the template in the editor.
                 <!-- Login Button -->
                 <div class="row">
                     <div class="form-group col-xs-12">
-                      <button type="button" id="buscar" name="buscar" value="buscar" class="btn btn-primary col-xs-offset-5 col-xs-1">
+                      <button id="buscar" name="buscar" value="buscar" class="btn btn-primary col-xs-offset-5 col-xs-1">
                           BUSCAR
-                      </button>    
+                      </button>   
+                      <button type="button" id="modificar" name="modificar" value="modificar" class="botoncentrado">
+                    Modificar
+                 </button>  
                     </div>
                 </div>
                 
