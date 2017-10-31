@@ -67,6 +67,7 @@ and open the template in the editor.
                  ape2:ape2},
                 function(htmlexterno){
                    alert (htmlexterno);
+                   $("#resultado").append(htmlexterno); // html(htmlexterno);
                 });
        });
        
@@ -127,9 +128,7 @@ and open the template in the editor.
                  
         </div>
     </div>
-         <span id="resultado" name="resultado">
-                    
-                </span> 
+        
       <div class="panel panel-primary">
             <div class="panel-heading">Resultados</div>
             <div class="panel-body">
@@ -155,6 +154,7 @@ and open the template in the editor.
                    <td>Rocky@balboa.es</td>
                    <td>Calle la paz</td>
                 </tr>
+                <div id="resultado"></div>
                 <tr>
                    <td>Indiana</td>
                    <td>Jones</td>

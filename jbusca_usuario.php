@@ -9,7 +9,16 @@ $ape2=$_POST['ape2'];
 
 $resultado= "NOMBRE PACIENTE " . $ape1 . " " . $ape2;
 
-echo $resultado;
+$resultado2=" <tr>
+                   <td>Indiana</td>
+                   <td>Jones</td>
+                   <td>Perez</td>
+                   <td>666 777 777</td>
+                   <td>indiana@jones.es</td>
+                   <td>Calle abastos</td>
+                </tr>";
+
+echo $resultado2;
 
 
 
