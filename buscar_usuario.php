@@ -51,7 +51,7 @@ and open the template in the editor.
     
     
         
-    
+        
     <script type="text/javascript">        
       $('document').ready(function(){
        
@@ -67,7 +67,9 @@ and open the template in the editor.
                  ape2:ape2},
                 function(htmlexterno){
                    alert (htmlexterno);
-                   $("#resultado").append(htmlexterno); // html(htmlexterno);
+                   $("#res2").append('<strong>NUEVO ELEMENTO</strong>');
+                //   $("#resultado").html('<tr><td>Indiana</td><td>Jones</td><td>Perez</td><td>666 777 777</td><td>indiana@jones.es</td><td>Calle abastos</td></tr>'); // html(htmlexterno);
+                   $("#resultado tr:last").after('<tr><td>Indiana</td><td>Jones</td><td>Perez</td><td>666 777 777</td><td>indiana@jones.es</td><td>Calle abastos</td></tr>');
                 });
        });
        
@@ -132,9 +134,9 @@ and open the template in the editor.
       <div class="panel panel-primary">
             <div class="panel-heading">Resultados</div>
             <div class="panel-body">
-                
+                <span id="res2"></span>  
              <div class="table-responsive">
-               <table class="table table-hover table-bordered">
+               <table class="table table-hover table-bordered" id="resultado">
                 <thead>
                   <tr>
                     <th>Nombre</th>
@@ -154,7 +156,7 @@ and open the template in the editor.
                    <td>Rocky@balboa.es</td>
                    <td>Calle la paz</td>
                 </tr>
-                <div id="resultado"></div>
+               
                 <tr>
                    <td>Indiana</td>
                    <td>Jones</td>
@@ -163,11 +165,15 @@ and open the template in the editor.
                    <td>indiana@jones.es</td>
                    <td>Calle abastos</td>
                 </tr>
-              
+            
                </tbody>
+              
               </table>
+                 
             </div>
         
        </div>   
+            
+              
     </body>   
 </htm>
