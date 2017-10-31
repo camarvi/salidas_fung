@@ -57,6 +57,14 @@ and open the template in the editor.
        
          $("#modificar").click(function(){
                alert("DENTRO DE JQUERY");
+             //  $('table tr:not(:first-child)').remove();
+             $("#tabla tbody tr").remove();
+            //  var trs=$("#tabla tr").length;
+            //    if(trs>1)
+            //      {
+            //    // Eliminamos la ultima columna
+            //     $("#tabla tr:last").remove();
+            //    } 
              var nuhsa=$('#nuhsa').val();
              var ape1=$('#ape1').val();
              var ape2=$('#ape2').val();
@@ -66,10 +74,10 @@ and open the template in the editor.
                  ape1:ape1,
                  ape2:ape2},
                 function(htmlexterno){
-                   alert (htmlexterno);
-                   $("#res2").append('<strong>NUEVO ELEMENTO</strong>');
+                //   alert (htmlexterno);
+                
                 //   $("#resultado").html('<tr><td>Indiana</td><td>Jones</td><td>Perez</td><td>666 777 777</td><td>indiana@jones.es</td><td>Calle abastos</td></tr>'); // html(htmlexterno);
-                   $("#resultado tr:last").after('<tr><td>Indiana</td><td>Jones</td><td>Perez</td><td>666 777 777</td><td>indiana@jones.es</td><td>Calle abastos</td></tr>');
+                   $("#tabla tr:last").after(htmlexterno);
                 });
        });
        
@@ -136,7 +144,7 @@ and open the template in the editor.
             <div class="panel-body">
                 <span id="res2"></span>  
              <div class="table-responsive">
-               <table class="table table-hover table-bordered" id="resultado">
+               <table class="table table-hover table-bordered" id="tabla">
                 <thead>
                   <tr>
                     <th>Nombre</th>
