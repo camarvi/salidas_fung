@@ -24,23 +24,24 @@ and open the template in the editor.
     <script src="js/jquery-1.7.1.min.js"></script>
    
     
-       <script type="text/javascript">        
+   <script type="text/javascript">        
       $('document').ready(function(){
        
          $("#buscar").click(function(){
-              alert("DENTRO DE JQUERY");
+             alert("DENTRO DE JQUERY");
              var nuhsa=$('#nuhsa').val();
              var ape1=$('#ape1').val();
              var ape2=$('#ape2').val();
             
              $.post("jbusca_usuario.php",{
-                 nusha:nusha,
+                 nusha:nuhsa,
                  ape1:ape1,
                  ape2:ape2},
                 function(data,estado){
-                   if (estado='succes'){
-                       alert ('Datos Modificados');
-                   } 
+                   if (estado="suces") { 
+                       alert ('estado');
+                   }   
+                 
                 });
        });
        
@@ -49,18 +50,29 @@ and open the template in the editor.
     </script>    
     
     
-    
+        
     
     <script type="text/javascript">        
       $('document').ready(function(){
        
          $("#modificar").click(function(){
-              alert("DENTRO DE JQUERY");
+               alert("DENTRO DE JQUERY");
+             var nuhsa=$('#nuhsa').val();
+             var ape1=$('#ape1').val();
+             var ape2=$('#ape2').val();
+            
+             $.post("jbusca_usuario.php",{
+                 nusha:nuhsa,
+                 ape1:ape1,
+                 ape2:ape2},
+                function(htmlexterno){
+                   alert (htmlexterno);
                 });
        });
-         
+       
+    });   
         
-    </script>    
+    </script>
   
     
     </head>    
@@ -92,7 +104,7 @@ and open the template in the editor.
                     
                     <label for="apellido" class="col-xs-1"><span style="margin-right:5px;">Apellido2:</span></label>
                     <div class="col-xs-3">
-                    <input class="form-control" id="ap2" type="text" name="ap2"/>
+                    <input class="form-control" id="ape2" type="text" name="ape2"/>
                     </div>
                        
                 </div>
