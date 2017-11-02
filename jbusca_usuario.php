@@ -21,7 +21,13 @@ if (is_null($nuhsa)) {
 
 
 $resultado="";
-        
+   
+ //<td>
+ //                        <a href="buscar_historia.php?cod=<?php echo $registro->getValueEncoded("COD") ?>">
+ //                            <img src="imagenes/icono_eliminar.gif"  border="none" alt="borrar">
+ //                         </a>
+ //                   </td> 
+
    foreach ($pacientes as $paciente) {
       
        $resultado=$resultado . "<tr><td>" . $paciente->getValue("NUHSA") . "</td><td>" . $paciente->getValue("NOMBRE") . "</td><td>" . $paciente->getValue("APE1") . "</td><td>" . $paciente->getValue("APE2") . "</td><td></td></tr>";
