@@ -8,10 +8,11 @@ $ape1=$_POST['ape1'];
 $ape2=$_POST['ape2'];
 
 if (is_null($nuhsa)) {
-       if (is_null($ape2)==false){
-          list($pacientes)=  Bdu::getUsuarios_2Ap($ape1, $ape2);
+       if (empty($ape2)==false){
+            list($pacientes)=  Bdu::getUsuarios_2Ap($ape1, $ape2);
+           
          } else {
-              list($pacientes)=  Bdu::getUsuarios_1Ap($ape1);
+            list($pacientes)=  Bdu::getUsuarios_1Ap($ape1);  
               }  
    } else {
     //SE BUSCA POR AN

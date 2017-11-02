@@ -94,7 +94,7 @@ class Bdu  extends DataObject {
  public static function getUsuarios_2Ap($ape1,$ape2) {
 
         $conn=parent::connect();
-        $sql=SQL_PROFESIONALES_2APE;
+        $sql=SQL_BUSCA_APE2;
         
         try {
             $st=$conn->prepare($sql);

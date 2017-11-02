@@ -105,7 +105,7 @@ and open the template in the editor.
                 <div class="form-group col-xs-12">
                     <label for="nuhsa" class="col-xs-1"><span style="margin-right:5px;">Nuhsa:</span></label>
                      <div class="col-xs-3">
-                    <input class="form-control" id="nuhsa" type="text" name="nuhsa" placeholder="nuhsa"/>
+                    <input class="form-control" id="nuhsa" type="text" name="nuhsa" placeholder=""/>
                     </div> 
                     
                     <label for="nombre" class="col-xs-1"><span style="margin-right:5px;">Apellido1:</span></label>
@@ -156,22 +156,15 @@ and open the template in the editor.
                 </thead>
                 <tbody>
                  <tr>
-                   <td>Rocky</td>
-                   <td>Balboa</td>
-                   <td>López</td>
-                   <td>666 666 666</td>
-                   <td>Rocky@balboa.es</td>
-                   <td>Calle la paz</td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                  
                 </tr>
                
-                <tr>
-                   <td>Indiana</td>
-                   <td>Jones</td>
-                   <td>Perez</td>
-                   <td>666 777 777</td>
-                   <td>indiana@jones.es</td>
-                   <td>Calle abastos</td>
-                </tr>
+                
             
                </tbody>
               
