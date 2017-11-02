@@ -33,7 +33,7 @@ and open the template in the editor.
              var ape1=$('#ape1').val();
              var ape2=$('#ape2').val();
             
-             $.post("jbusca_usuario.php",{
+             $.post("jbusca_usuario_1.php",{
                  nusha:nuhsa,
                  ape1:ape1,
                  ape2:ape2},
@@ -147,11 +147,12 @@ and open the template in the editor.
                <table class="table table-hover table-bordered" id="tabla">
                 <thead>
                   <tr>
-                    <th>Nuhsa</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
-                    <th>2&ordm; Apellido</th>
-                    <th></th>
+                    <th>2º Apellido</th>
+                    <th>Móvil</th>
+                    <th>Email</th>
+                    <th>Dirección</th>
                  </tr>
                 </thead>
                 <tbody>
