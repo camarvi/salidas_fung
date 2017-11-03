@@ -35,7 +35,29 @@ class Bdu  extends DataObject {
      );    
 
     //lista de categorias por orden alfabetico
+    
+  public static function getUsuarioBdu ($nusha) {
+      
+        $conn=parent::connect();
+        $sql=SQL_BUSCA_NUHSA;
 
+        try{
+            $st=$conn->prepare($sql);
+            $busqueda= '%' . utf8_decode(trim($nusha)) . '%';
+            $st->bindValue(":NUHSA",$nusha,PDO::PARAM_STR);
+            $st->execute();
+            $row=$st->fetch();
+            parent::disconnect($conn);
+            if ($row) return new Bdu($row);
+        } catch (PDOException $e) {
+               parent::disconnect($conn);
+               die("Fallo Consulta SQL: " . $e->getMessage());
+        }
+
+    }
+    
+    
+    
   public static function BuscaNusha($nusha) {
 
         $conn=parent::connect();
@@ -43,8 +65,8 @@ class Bdu  extends DataObject {
         
         try {
             $st=$conn->prepare($sql);
-            $busqueda= '%' . utf8_decode(trim($ape1)) . '%';
-            $st->bindValue(":NUSHA",$nusha,PDO::PARAM_STR);
+            $busqueda= '%' . utf8_decode(trim($nusha)) . '%';
+            $st->bindValue(":NUHSA",$nusha,PDO::PARAM_STR);
             $st->execute();
             $listabdu=array();
                foreach ($st->fetchAll() as $row) {

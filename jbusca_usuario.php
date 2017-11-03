@@ -16,21 +16,26 @@ if (is_null($nuhsa)) {
               }  
    } else {
     //SE BUSCA POR AN
-        list($pacientes)=  Bdu::BuscaNusha($nusha);
+        list($pacientes)=  Bdu::BuscaNusha($nuhsa);
         }
 
 
 $resultado="";
    
- //<td>
+ /*<td>
  //                        <a href="buscar_historia.php?cod=<?php echo $registro->getValueEncoded("COD") ?>">
  //                            <img src="imagenes/icono_eliminar.gif"  border="none" alt="borrar">
  //                         </a>
  //                   </td> 
+*/
 
    foreach ($pacientes as $paciente) {
       
-       $resultado=$resultado . "<tr><td>" . $paciente->getValue("NUHSA") . "</td><td>" . $paciente->getValue("NOMBRE") . "</td><td>" . $paciente->getValue("APE1") . "</td><td>" . $paciente->getValue("APE2") . "</td><td></td></tr>";
+       $direccion="<a href='nueva_entrega.php?AN=" . $paciente->getValue("NUHSA") . "'>" 
+               . "<img src='imagenes/icono_mas.gif'  border='none' alt='Selec'></a>";
+       
+       $resultado=$resultado . "<tr><td>" . $paciente->getValue("NUHSA") . "</td><td>" . $paciente->getValue("NOMBRE") . "</td><td>" . $paciente->getValue("APE1") . "</td><td>" . $paciente->getValue("APE2") . "</td>";
+       $resultado=$resultado ."<td>" . $direccion .  "</td></tr>";
        
    }
    

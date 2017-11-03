@@ -78,7 +78,7 @@ and open the template in the editor.
                 <div class="form-group col-xs-12">
                     <label for="nuhsa" class="col-xs-1"><span style="margin-right:5px;">Nuhsa:</span></label>
                      <div class="col-xs-3">
-                    <input class="form-control" id="nuhsa" type="text" name="nuhsa" placeholder=""/>
+                    <input class="form-control" id="nombre" type="text" name="nombre" placeholder=""/>
                     </div> 
                     
                     <label for="nombre" class="col-xs-1"><span style="margin-right:5px;">Apellido1:</span></label>
@@ -93,6 +93,23 @@ and open the template in the editor.
                        
                 </div>
                
+             <div class="form-group col-xs-12">
+                    <label for="nuhsa" class="col-xs-1"><span style="margin-right:5px;">Nuhsa:</span></label>
+                     <div class="col-xs-3">
+                    <input class="form-control" id="nuhsa" type="text" name="nuhsa" placeholder=""/>
+                    </div> 
+                    
+                    <label for="nombre" class="col-xs-1"><span style="margin-right:5px;">Fecha Nacimiento:</span></label>
+                    <div class="col-xs-3">
+                    <input class="form-control" id="fnacimiento" type="text" name="fnacimiento" placeholder=""/>
+                    </div>   
+                    
+                    <label for="apellido" class="col-xs-1"><span style="margin-right:5px;">Direccion:</span></label>
+                    <div class="col-xs-3">
+                    <input class="form-control" id="direccion" type="text" name="ape2"/>
+                    </div>
+                       
+               </div>
               
                 <!-- Login Button -->
                 <div class="row">
@@ -109,6 +126,78 @@ and open the template in the editor.
                  
         </div>
     </div>
+     
+    <!-- REGISTRO DE NUEVA ENTRADA  -->
+
+  <div class="panel panel-primary">
+            <div class="panel-heading">Datos Entrega</div>
+            <div class="panel-body">
+            
+            <!-- Login Form -->
+            <form class="form-horizontal" role="form" action="" method="POST">
+            
+            <!-- Username Field -->
+                
+                <div class="form-group col-xs-12">
+                    <label for="fecha" class="col-xs-1"><span style="margin-right:5px;">Fecha:</span></label>
+                     <div class="col-xs-3">
+                    <input class="form-control" id="fecha" type="text" name="nombre" placeholder=""/>
+                    </div> 
+                    
+                    <label for="apellido" class="col-xs-1"><span style="margin-right:5px;">Centro:</span></label>
+                    <div class="col-xs-3">
+                    <input class="form-control" id="ape2" type="text" name="ape2"/>
+                    </div>
+                    
+                    <label for="nombre" class="col-xs-1"><span style="margin-right:5px;">Entregado:</span></label>
+                    <div class="col-xs-3">
+                    <input class="form-control" id="entrega" type="text" name="entrega" placeholder=""/>
+                    </div>   
+                        
+                </div>
+               
+              <div class="form-group col-xs-12">
+                    <label for="nuhsa" class="col-xs-1"><span style="margin-right:5px;">Material:</span></label>
+                     <div class="col-xs-5">
+                    <input class="form-control" id="nuhsa" type="text" name="nuhsa" placeholder=""/>
+                    </div> 
+                    
+                    <label for="nombre" class="col-xs-1"><span style="margin-right:5px;">Cantidad:</span></label>
+                    <div class="col-xs-1">
+                    <input class="form-control" id="fnacimiento" type="text" name="fnacimiento" placeholder=""/>
+                    </div>   
+                    
+                    <label for="apellido" class="col-xs-1"><span style="margin-right:5px;">Residencia:</span></label>
+                    <div class="col-xs-1">
+                    <input class="form-control" id="direccion" type="text" name="ape2"/>
+                    </div>
+                       
+               </div>
+            
+                <div class="form-group col-xs-12">
+                    <label for="nuhsa" class="col-xs-1"><span style="margin-right:5px;">Observaciones:</span></label>
+                     <div class="col-xs-5">
+                       <input class="form-control" id="nuhsa" type="text" name="OBS" placeholder=""/>
+                     </div> 
+                    <div class="col-xs-2">
+                      <button id="buscar" name="buscar" value="buscar" class="btn btn-primary col-xs-offset-5 col-xs-2">
+                          Grabar
+                      </button>   
+                  
+                    </div>
+                </div>
+            
+            </form>
+            <!-- End of Login Form -->
+                 
+        </div>
+    </div>
+    
+    
+
+    <!-- FIN REGISTRO ENTRADA NUEVA -->    
+        
+        
         
       <div class="panel panel-primary">
             <div class="panel-heading">Resultados</div>
@@ -147,4 +236,7 @@ and open the template in the editor.
             
               
     </body>   
+    
+    
+    
 </htm>
