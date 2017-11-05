@@ -76,7 +76,7 @@ and open the template in the editor.
             <!-- Username Field -->
                 
                 <div class="form-group col-xs-12">
-                    <label for="nuhsa" class="col-xs-1"><span style="margin-right:5px;">Nuhsa:</span></label>
+                    <label for="nuhsa" class="col-xs-1"><span style="margin-right:5px;">Nombre:</span></label>
                      <div class="col-xs-3">
                     <input class="form-control" id="nombre" type="text" name="nombre" placeholder=""/>
                     </div> 
@@ -95,31 +95,22 @@ and open the template in the editor.
                
              <div class="form-group col-xs-12">
                     <label for="nuhsa" class="col-xs-1"><span style="margin-right:5px;">Nuhsa:</span></label>
-                     <div class="col-xs-3">
+                     <div class="col-xs-2">
                     <input class="form-control" id="nuhsa" type="text" name="nuhsa" placeholder=""/>
                     </div> 
                     
-                    <label for="nombre" class="col-xs-1"><span style="margin-right:5px;">Fecha Nacimiento:</span></label>
-                    <div class="col-xs-3">
+                    <label for="nombre" class="col-xs-2"><span style="margin-right:5px;">Fecha Nacimiento:</span></label>
+                    <div class="col-xs-2">
                     <input class="form-control" id="fnacimiento" type="text" name="fnacimiento" placeholder=""/>
                     </div>   
                     
                     <label for="apellido" class="col-xs-1"><span style="margin-right:5px;">Direccion:</span></label>
-                    <div class="col-xs-3">
+                    <div class="col-xs-4">
                     <input class="form-control" id="direccion" type="text" name="ape2"/>
                     </div>
                        
                </div>
               
-                <!-- Login Button -->
-                <div class="row">
-                    <div class="form-group col-xs-12">
-                      <button id="buscar" name="buscar" value="buscar" class="btn btn-primary col-xs-offset-5 col-xs-2">
-                          BUSCAR PACIENTE
-                      </button>   
-                  
-                    </div>
-                </div>
                 
             </form>
             <!-- End of Login Form -->
@@ -130,7 +121,7 @@ and open the template in the editor.
     <!-- REGISTRO DE NUEVA ENTRADA  -->
 
   <div class="panel panel-primary">
-            <div class="panel-heading">Datos Entrega</div>
+            <div class="panel-heading">Nueva Entrega</div>
             <div class="panel-body">
             
             <!-- Login Form -->
@@ -140,50 +131,58 @@ and open the template in the editor.
                 
                 <div class="form-group col-xs-12">
                     <label for="fecha" class="col-xs-1"><span style="margin-right:5px;">Fecha:</span></label>
-                     <div class="col-xs-3">
-                    <input class="form-control" id="fecha" type="text" name="nombre" placeholder=""/>
+                     <div class="col-xs-2">
+                    <input class="form-control" id="fecha" type="text" name="nombre" value="<?php echo date('d/m/Y'); ?>"/>
                     </div> 
                     
-                    <label for="apellido" class="col-xs-1"><span style="margin-right:5px;">Centro:</span></label>
+                    <label for="centro" class="col-xs-1"><span style="margin-right:5px;">Centro:</span></label>
                     <div class="col-xs-3">
-                    <input class="form-control" id="ape2" type="text" name="ape2"/>
+                    <input class="form-control" id="centro" type="text" name="centro"/>
                     </div>
                     
-                    <label for="nombre" class="col-xs-1"><span style="margin-right:5px;">Entregado:</span></label>
-                    <div class="col-xs-3">
+                    <label for="entrega" class="col-xs-1"><span style="margin-right:5px;">Entregado:</span></label>
+                    <div class="col-xs-2">
                     <input class="form-control" id="entrega" type="text" name="entrega" placeholder=""/>
+                    </div>   
+                    
+                    <label for="cantidad" class="col-xs-1"><span style="margin-right:5px;">Cantidad:</span></label>
+                    <div class="col-xs-1">
+                    <input class="form-control" id="cantidad" type="text" name="cantidad" placeholder=""/>
                     </div>   
                         
                 </div>
                
               <div class="form-group col-xs-12">
-                    <label for="nuhsa" class="col-xs-1"><span style="margin-right:5px;">Material:</span></label>
-                     <div class="col-xs-5">
-                    <input class="form-control" id="nuhsa" type="text" name="nuhsa" placeholder=""/>
+                    <label for="material" class="col-xs-1"><span style="margin-right:5px;">Material:</span></label>
+                     <div class="col-xs-7">
+                    <input class="form-control" id="material" type="text" name="material" placeholder=""/>
                     </div> 
                     
-                    <label for="nombre" class="col-xs-1"><span style="margin-right:5px;">Cantidad:</span></label>
-                    <div class="col-xs-1">
-                    <input class="form-control" id="fnacimiento" type="text" name="fnacimiento" placeholder=""/>
-                    </div>   
-                    
-                    <label for="apellido" class="col-xs-1"><span style="margin-right:5px;">Residencia:</span></label>
-                    <div class="col-xs-1">
-                    <input class="form-control" id="direccion" type="text" name="ape2"/>
+                    <label for="residencia" class="col-xs-1"><span style="margin-right:5px;">Residencia:</span></label>
+                    <div class="col-xs-3">
+                      <select name="residencia" id="residencia" class="form-control"> 
+                          <option value="1">Residencia San Rafael</option>
+                          <option value="2">Residencia La Purisima</option>
+                          <option value="3">La cañada</option>
+                          <option value="4">Virgen de la Salud</option>
+                       </select>
                     </div>
                        
                </div>
             
                 <div class="form-group col-xs-12">
-                    <label for="nuhsa" class="col-xs-1"><span style="margin-right:5px;">Observaciones:</span></label>
-                     <div class="col-xs-5">
-                       <input class="form-control" id="nuhsa" type="text" name="OBS" placeholder=""/>
+                    <label for="nuhsa" class="col-xs-1"><span style="margin-right:5px;">Obs :</span></label>
+                     <div class="col-xs-8">
+                       <input class="form-control" id="obs" type="text" name="obs" placeholder=""/>
                      </div> 
-                    <div class="col-xs-2">
-                      <button id="buscar" name="buscar" value="buscar" class="btn btn-primary col-xs-offset-5 col-xs-2">
+                    <div class="col-xs-3">
+                      <button id="buscar" name="buscar" value="buscar" class="btn btn-primary ">
                           Grabar
                       </button>   
-                  
+                      <button id="inicio" name="inicio" value="inicio" class="btn btn-primary col-lg-offset-2">
+                          Inicio
+                      </button>   
+                        
                     </div>
                 </div>
             
@@ -200,18 +199,19 @@ and open the template in the editor.
         
         
       <div class="panel panel-primary">
-            <div class="panel-heading">Resultados</div>
+            <div class="panel-heading">Salidas Realizadas</div>
             <div class="panel-body">
                 <span id="res2"></span>  
              <div class="table-responsive">
                <table class="table table-hover table-bordered" id="tabla">
                 <thead>
                   <tr>
-                    <th>Nuhsa</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>2&ordm; Apellido</th>
-                    <th></th>
+                    <th class="col-xs-1">Fecha</th>
+                    <th class="col-xs-5">Material</th>
+                    <th class="col-xs-1">Cantidad</th>
+                    <th class="col-xs-2">Entregado</th>
+                    <th class="col-xs-2">Obs</th>
+                    <th class="col-xs-1"></th>
                  </tr>
                 </thead>
                 <tbody>
