@@ -6,6 +6,33 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 
+
+<?php
+//require_once ("plantilla.php");
+require_once ("common.inc.php");
+   
+
+//compruebaUsuario();
+
+
+$muestradatos=0;
+
+
+
+
+// CARGO INFORMACION COMBOX
+
+list($listacentros)= Centros::listaCentros();
+list($listaquienes)=  Quien::listaQuien();
+list($listaresidencias)=  Residencias::listaResidencias();
+list($listamaterial)=  Material::listaMaterial();
+
+
+?>
+
+
+
+
 <htm>
     
     <head>
@@ -137,12 +164,30 @@ and open the template in the editor.
                     
                     <label for="centro" class="col-xs-1"><span style="margin-right:5px;">Centro:</span></label>
                     <div class="col-xs-3">
-                    <input class="form-control" id="centro" type="text" name="centro"/>
+                       <select name="entrega" id="entrega" class="form-control"> 
+                        <?php
+                          foreach ($listacentros as $lcentro) {
+                        ?>
+                          <option value="<?php echo $lcentro->getValueEncoded('COD_CEN')?>">
+                           <?php echo ($lcentro->getValue('CENTRO'))?></option>
+                        <?php    
+                           }
+                        ?>    
+                     </select> 
                     </div>
                     
                     <label for="entrega" class="col-xs-1"><span style="margin-right:5px;">Entregado:</span></label>
                     <div class="col-xs-2">
-                    <input class="form-control" id="entrega" type="text" name="entrega" placeholder=""/>
+                     <select name="entrega" id="entrega" class="form-control"> 
+                        <?php
+                          foreach ($listaquienes as $lquien) {
+                        ?>
+                          <option value="<?php echo $lquien->getValueEncoded('COD')?>">
+                           <?php echo ($lquien->getValue('PERSONA'))?></option>
+                        <?php    
+                           }
+                        ?>    
+                     </select>
                     </div>   
                     
                     <label for="cantidad" class="col-xs-1"><span style="margin-right:5px;">Cantidad:</span></label>
@@ -161,17 +206,21 @@ and open the template in the editor.
                     <label for="residencia" class="col-xs-1"><span style="margin-right:5px;">Residencia:</span></label>
                     <div class="col-xs-3">
                       <select name="residencia" id="residencia" class="form-control"> 
-                          <option value="1">Residencia San Rafael</option>
-                          <option value="2">Residencia La Purisima</option>
-                          <option value="3">La cañada</option>
-                          <option value="4">Virgen de la Salud</option>
+                        <?php
+                          foreach ($listaresidencias as $lresidencia) {
+                        ?>
+                          <option value="<?php echo $lresidencia->getValueEncoded('COD')?>">
+                           <?php echo ($lresidencia->getValue('NOMBRE'))?></option>
+                        <?php
+                           }
+                        ?>    
                        </select>
                     </div>
                        
                </div>
             
                 <div class="form-group col-xs-12">
-                    <label for="nuhsa" class="col-xs-1"><span style="margin-right:5px;">Obs :</span></label>
+                    <label for="obs" class="col-xs-1"><span style="margin-right:5px;">Obs :</span></label>
                      <div class="col-xs-8">
                        <input class="form-control" id="obs" type="text" name="obs" placeholder=""/>
                      </div> 
