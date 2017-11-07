@@ -40,7 +40,7 @@ class Bdu  extends DataObject {
       
         $conn=parent::connect();
         $sql=SQL_BUSCA_NUHSA;
-
+    
         try{
             $st=$conn->prepare($sql);
             $busqueda= '%' . utf8_decode(trim($nusha)) . '%';
@@ -125,7 +125,7 @@ class Bdu  extends DataObject {
             $st->bindValue(":APE1",$busqueda1,PDO::PARAM_STR);
             $st->bindValue(":APE2",$busqueda2,PDO::PARAM_STR);
             $st->execute();
-            $profesionales=array();
+            $listabdu=array();
                foreach ($st->fetchAll() as $row) {
                    $listabdu[]=new Bdu($row);
                }

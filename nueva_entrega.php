@@ -15,6 +15,17 @@ require_once ("common.inc.php");
 //compruebaUsuario();
 
 
+if (isset ($_GET['an'])){
+   
+    $an= $_GET['an'];   
+    
+    $paciente=  Bdu::getUsuarioBdu($an);
+    
+    $fnacimiento=$paciente->getValue('DIA') . "/" . $paciente->getValue('MES') . "/" . $paciente->getValue('ANIO');
+    
+}
+
+
 $muestradatos=0;
 
 
@@ -103,37 +114,37 @@ list($listamaterial)=  Material::listaMaterial();
             <!-- Username Field -->
                 
                 <div class="form-group col-xs-12">
-                    <label for="nuhsa" class="col-xs-1"><span style="margin-right:5px;">Nombre:</span></label>
+                    <label for="nombre" class="col-xs-1"><span style="margin-right:5px;">Nombre:</span></label>
                      <div class="col-xs-3">
-                    <input class="form-control" id="nombre" type="text" name="nombre" placeholder=""/>
+                         <input class="form-control" id="nombre" type="text" name="nombre" value="<?php echo $paciente->getValue('NOMBRE'); ?>"/>
                     </div> 
                     
-                    <label for="nombre" class="col-xs-1"><span style="margin-right:5px;">Apellido1:</span></label>
+                    <label for="ape1" class="col-xs-1"><span style="margin-right:5px;">Apellido1:</span></label>
                     <div class="col-xs-3">
-                    <input class="form-control" id="ape1" type="text" name="ape1" placeholder=""/>
+                    <input class="form-control" id="ape1" type="text" name="ape1" value="<?php echo $paciente->getValue('APE1'); ?>"/>
                     </div>   
                     
-                    <label for="apellido" class="col-xs-1"><span style="margin-right:5px;">Apellido2:</span></label>
+                    <label for="ape2" class="col-xs-1"><span style="margin-right:5px;">Apellido2:</span></label>
                     <div class="col-xs-3">
-                    <input class="form-control" id="ape2" type="text" name="ape2"/>
+                    <input class="form-control" id="ape2" type="text" name="ape2" value="<?php echo $paciente->getValue('APE2'); ?>"/>
                     </div>
                        
-                </div>
+                </div>    
                
              <div class="form-group col-xs-12">
                     <label for="nuhsa" class="col-xs-1"><span style="margin-right:5px;">Nuhsa:</span></label>
                      <div class="col-xs-2">
-                    <input class="form-control" id="nuhsa" type="text" name="nuhsa" placeholder=""/>
+                    <input class="form-control" id="nuhsa" type="text" name="nuhsa" value="<?php echo $paciente->getValue('NUHSA'); ?>"/>
                     </div> 
                     
-                    <label for="nombre" class="col-xs-2"><span style="margin-right:5px;">Fecha Nacimiento:</span></label>
+                    <label for="fnacimiento" class="col-xs-2"><span style="margin-right:5px;">Fecha Nacimiento:</span></label>
                     <div class="col-xs-2">
-                    <input class="form-control" id="fnacimiento" type="text" name="fnacimiento" placeholder=""/>
+                    <input class="form-control" id="fnacimiento" type="text" name="fnacimiento" value="<?php echo $fnacimiento; ?>"/>
                     </div>   
                     
-                    <label for="apellido" class="col-xs-1"><span style="margin-right:5px;">Direccion:</span></label>
+                    <label for="direccion" class="col-xs-1"><span style="margin-right:5px;">Direccion:</span></label>
                     <div class="col-xs-4">
-                    <input class="form-control" id="direccion" type="text" name="ape2"/>
+                    <input class="form-control" id="direccion" type="text" name="direccion" value="<?php $pintadir=$paciente->getValue('NOMBRE_VIA') . " " . $paciente->getValue('NUMERO_VIA');  echo $pintadir; ?>"/>
                     </div>
                        
                </div>

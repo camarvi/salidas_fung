@@ -97,7 +97,7 @@ and open the template in the editor.
                 <!-- Login Button -->
                 <div class="row">
                     <div class="form-group col-xs-12">
-                      <button id="buscar" name="buscar" value="buscar" class="btn btn-primary col-xs-offset-5 col-xs-2">
+                        <button type="button" id="buscar" name="buscar" value="buscar" class="btn btn-primary col-xs-offset-5 col-xs-2">
                           BUSCAR PACIENTE
                       </button>   
                   
