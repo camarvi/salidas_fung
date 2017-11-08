@@ -24,6 +24,7 @@ class Salidas  extends DataObject {
         "CANTIDAD"=>"",
         "RESIDENCIA"=>"",
         "OBSERVACINES"=>"",
+        "NOMBRE_MATERIAL"=>"",
         
      );    
 
@@ -40,13 +41,14 @@ class Salidas  extends DataObject {
           
             $st->bindValue(":USUARIO",$this->data["USUARIO"], PDO::PARAM_STR);
             $st->bindValue(":CENTRO",$this->data["CENTRO"], PDO::PARAM_STR);
-            $st->bindValue(":QUIEN",$this->data["QUIEN"], PDO::PARAM_STR);
+            $st->bindValue(":QUIEN",$this->data["QUIEN"], PDO::PARAM_INT);
             $st->bindValue(":SEXO",$this->data["SEXO"], PDO::PARAM_STR);
             $st->bindValue(":FECHA",$this->data["FECHA"], PDO::PARAM_STR);
-            $st->bindValue(":MATERIAL",$this->data["MATERIAL"], PDO::PARAM_STR);
-            $st->bindValue(":CANTIDAD",$this->data["CANTIDAD"], PDO::PARAM_STR); 
+            $st->bindValue(":MATERIAL",$this->data["MATERIAL"], PDO::PARAM_INT);
+            $st->bindValue(":CANTIDAD",$this->data["CANTIDAD"], PDO::PARAM_INT); 
             $st->bindValue(":RESIDENCIA",$this->data["RESIDENCIA"], PDO::PARAM_INT); 
-            $st->bindValue(":OBSERVACIONES",$this->data["OBSERVACIONES"], PDO::PARAM_INT);
+            $st->bindValue(":OBSERVACIONES",$this->data["OBSERVACIONES"], PDO::PARAM_STR);
+            $st->bindValue(":NOMBRE_MATERIAL",$this->data["NOMBRE_MATERIAL"], PDO::PARAM_STR);
             
             $st->execute();
             parent::disconnect($conn);

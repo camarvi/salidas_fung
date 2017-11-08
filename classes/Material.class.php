@@ -20,6 +20,7 @@ class Material  extends DataObject {
         "CL_UNIV"=>"",
         "GENERICO"=>"",
         "DESCRIPCION"=>"",
+       
         
      );    
 
