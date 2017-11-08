@@ -210,8 +210,17 @@ list($listamaterial)=  Material::listaMaterial();
                
               <div class="form-group col-xs-12">
                     <label for="material" class="col-xs-1"><span style="margin-right:5px;">Material:</span></label>
-                     <div class="col-xs-7">
-                    <input class="form-control" id="material" type="text" name="material" placeholder=""/>
+                    <div class="col-xs-7">
+                     <select name="material" id="material" class="form-control"> 
+                        <?php
+                          foreach ($listamaterial as $lmaterial) {
+                        ?>
+                          <option value="<?php echo $lmaterial->getValueEncoded('ID')?>">
+                           <?php echo ($lmaterial->getValue('DESCRIPCION'))?></option>
+                        <?php
+                           }
+                        ?>    
+                       </select>     
                     </div> 
                     
                     <label for="residencia" class="col-xs-1"><span style="margin-right:5px;">Residencia:</span></label>
