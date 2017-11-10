@@ -38,6 +38,10 @@ list($listaquienes)=  Quien::listaQuien();
 list($listaresidencias)=  Residencias::listaResidencias();
 list($listamaterial)=  Material::listaMaterial();
 
+//SALIDAS DE UN USUARIO
+list($listasalidasd)=  Salidas::getSalidas_Usuario($an);
+
+
 
 ?>
 
@@ -100,7 +104,7 @@ list($listamaterial)=  Material::listaMaterial();
                 //   alert (htmlexterno);
                 
                 //   $("#resultado").html('<tr><td>Indiana</td><td>Jones</td><td>Perez</td><td>666 777 777</td><td>indiana@jones.es</td><td>Calle abastos</td></tr>'); // html(htmlexterno);
-                   $("#tabla tr:last").after(htmlexterno);
+                   $("#tabla tr:first").after(htmlexterno);
                 });
        });
        
