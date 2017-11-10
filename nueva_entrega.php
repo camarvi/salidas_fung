@@ -66,7 +66,7 @@ list($listamaterial)=  Material::listaMaterial();
     <script type="text/javascript">        
       $('document').ready(function(){
        
-         $("#buscar").click(function(){
+         $("#grabar").click(function(){
                alert("DENTRO DE JQUERY");
              //  $('table tr:not(:first-child)').remove();
              $("#tabla tbody tr").remove();
@@ -77,13 +77,25 @@ list($listamaterial)=  Material::listaMaterial();
             //     $("#tabla tr:last").remove();
             //    } 
              var nuhsa=$('#nuhsa').val();
-             var ape1=$('#ape1').val();
-             var ape2=$('#ape2').val();
+             var fecha=$('#fecha').val();
+             var centro=$('#centro').val();
+             var entrega=$('#entrega').val();
+             var cantidad=$('#cantidad').val();
+             var material=$('#material').val();
+             var texto_material=$('#material option:selected').html();
+             var residencia=$('#residencia').val();
+             var obs=$('#obs').val(); 
             
-             $.post("jbusca_usuario.php",{
+             $.post("graba_entrega.php",{
                  nuhsa:nuhsa,
-                 ape1:ape1,
-                 ape2:ape2},
+                 fecha:fecha,
+                 centro:centro,
+                 entrega:entrega,
+                 cantidad:cantidad,
+                 material:material,
+                 texto_material:texto_material,
+                 residencia:residencia,
+                 obs:obs},
                 function(htmlexterno){
                 //   alert (htmlexterno);
                 
@@ -245,7 +257,7 @@ list($listamaterial)=  Material::listaMaterial();
                        <input class="form-control" id="obs" type="text" name="obs" placeholder=""/>
                      </div> 
                     <div class="col-xs-3">
-                      <button id="buscar" name="buscar" value="buscar" class="btn btn-primary ">
+                      <button id="grabar" name="grabar" value="grabar" class="btn btn-primary ">
                           Grabar
                       </button>   
                       <button id="inicio" name="inicio" value="inicio" class="btn btn-primary col-lg-offset-2">

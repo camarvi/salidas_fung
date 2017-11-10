@@ -86,7 +86,7 @@ class Bdu  extends DataObject {
     }
     
     
-    public static function getUsuarios_1Ap($ape1) {
+ public static function getUsuarios_1Ap($ape1) {
 
         $conn=parent::connect();
         $sql=SQL_BUSCA_APE1;

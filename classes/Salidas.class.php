@@ -93,9 +93,60 @@ class Salidas  extends DataObject {
      
      
      
+   public static function getSalidas_Usuario($an) {
+
+        $conn=parent::connect();
+        $sql=SQL_BUSCA_SALIDAS_USUARIO;
+        
+        try {
+            $st=$conn->prepare($sql);
+            $busqueda= '%' . utf8_decode(trim($an)) . '%';
+            $st->bindValue(":usuario",$busqueda,PDO::PARAM_STR);
+            $st->execute();
+            $listasalidas=array();
+               foreach ($st->fetchAll() as $row) {
+                   $listasalidas[]=new Salidas($row);
+               }
+
+               parent::disconnect($conn);
+               return array($listasalidas);
+          
+
+
+        } catch (PDOException $e) {
+            parent::disconnect($conn);
+            die("Query Failed :" . $e->getMessage());
+        }
+
+    }     
      
-     
-     
+    
+   public static function getUltSalida_Usuario($an) {
+
+        $conn=parent::connect();
+        $sql=SQL_ULTIMA_SALIDA_USUARIO;
+        
+        try {
+            $st=$conn->prepare($sql);
+            $busqueda= '%' . utf8_decode(trim($an)) . '%';
+            $st->bindValue(":usuario",$busqueda,PDO::PARAM_STR);
+            $st->execute();
+            $listasalidas=array();
+               foreach ($st->fetchAll() as $row) {
+                   $listasalidas[]=new Salidas($row);
+               }
+
+               parent::disconnect($conn);
+               return array($listasalidas);
+          
+
+
+        } catch (PDOException $e) {
+            parent::disconnect($conn);
+            die("Query Failed :" . $e->getMessage());
+        }
+
+    }      
      
 }
 ?>
