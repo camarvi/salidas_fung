@@ -29,21 +29,6 @@ $obs=$_POST['obs'];
                 }
 
 
-/*
- * 
- * "USUARIO"=>"",
-        "CENTRO"=>"",
-        "QUIEN"=>"",
-        "FECHA"=>"",
-        "MATERIAL"=>"",
-        "CANTIDAD"=>"",
-        "RESIDENCIA"=>"",
-        "OBSERVACINES"=>"",
-        "NOMBRE_MATERIAL"=>"",
- * 
- */
-
-
 
 $nueva_entrega=new Salidas(array("USUARIO"=>($nuhsa),
           "FECHA"=>($fecha),
@@ -61,9 +46,7 @@ $nueva_entrega->NuevaSalida();
 // Una vez grabada la salida, busco todas las salidas del usuario
 
 list($salidas_usuario)=  Salidas::getUltSalida_Usuario($nuhsa);
-
-
-
+   
 
 $resultado="";
    

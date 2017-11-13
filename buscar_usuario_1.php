@@ -58,7 +58,7 @@ and open the template in the editor.
          $("#modificar").click(function(){
                alert("DENTRO DE JQUERY");
              //  $('table tr:not(:first-child)').remove();
-             $("#tabla tbody tr").remove();
+            // $("#tabla tbody tr").remove();
             //  var trs=$("#tabla tr").length;
             //    if(trs>1)
             //      {
@@ -69,7 +69,7 @@ and open the template in the editor.
              var ape1=$('#ape1').val();
              var ape2=$('#ape2').val();
             
-             $.post("jbusca_usuario.php",{
+             $.post("jbusca_usuario_1.php",{
                  nusha:nuhsa,
                  ape1:ape1,
                  ape2:ape2},
@@ -77,7 +77,8 @@ and open the template in the editor.
                 //   alert (htmlexterno);
                 
                 //   $("#resultado").html('<tr><td>Indiana</td><td>Jones</td><td>Perez</td><td>666 777 777</td><td>indiana@jones.es</td><td>Calle abastos</td></tr>'); // html(htmlexterno);
-                   $("#tabla tr:last").after(htmlexterno);
+                 //  $("#tabla tr:last").after(htmlexterno);
+                 $("#tabla tr:first").after(htmlexterno);
                 });
        });
        

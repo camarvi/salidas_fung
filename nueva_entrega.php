@@ -71,9 +71,9 @@ list($listasalidasd)=  Salidas::getSalidas_Usuario($an);
       $('document').ready(function(){
        
          $("#grabar").click(function(){
-               alert("DENTRO DE JQUERY");
+             //  alert("DENTRO DE JQUERY");
              //  $('table tr:not(:first-child)').remove();
-             $("#tabla tbody tr").remove();
+           //  $("#tabla tbody tr").remove();
             //  var trs=$("#tabla tr").length;
             //    if(trs>1)
             //      {
