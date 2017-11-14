@@ -25,7 +25,7 @@ define("PAGE_SIZE", 5);
 define("TBL_SALIDAS","FUNGIBLE_SALIDAS");
 define("TBL_CENTROS","CENTROS");
 define("TBL_BDU","FICHERO_BDU");
-define("TBL_SEXO","SEXO");
+define("TBL_SEXO","SEXO");     
 define("TBL_UGC","ZONAS");
 define("TBL_RESIDENCIAS","RESIDENCIAS");
 define("TBL_QUIEN","FUNG_QUIEN");

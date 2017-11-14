@@ -29,7 +29,7 @@ and open the template in the editor.
       $('document').ready(function(){
        
          $("#buscar").click(function(){
-               alert("DENTRO DE JQUERY");
+              // alert("DENTRO DE JQUERY");
              //  $('table tr:not(:first-child)').remove();
              $("#tabla tbody tr").remove();
             //  var trs=$("#tabla tr").length;

@@ -30,7 +30,8 @@ class Salidas  extends DataObject {
 
     //lista de categorias por orden alfabetico
 
-    public static function NuevaSalida() {
+    
+    public function nuevaSalida() {
 
         $conn=parent::connect();
         $sql=SQL_NUEVA_SALIDA;
@@ -42,7 +43,6 @@ class Salidas  extends DataObject {
             $st->bindValue(":USUARIO",$this->data["USUARIO"], PDO::PARAM_STR);
             $st->bindValue(":CENTRO",$this->data["CENTRO"], PDO::PARAM_STR);
             $st->bindValue(":QUIEN",$this->data["QUIEN"], PDO::PARAM_INT);
-            $st->bindValue(":SEXO",$this->data["SEXO"], PDO::PARAM_STR);
             $st->bindValue(":FECHA",$this->data["FECHA"], PDO::PARAM_STR);
             $st->bindValue(":MATERIAL",$this->data["MATERIAL"], PDO::PARAM_INT);
             $st->bindValue(":CANTIDAD",$this->data["CANTIDAD"], PDO::PARAM_INT); 

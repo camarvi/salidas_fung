@@ -9,18 +9,18 @@ $centro=$_POST['centro'];
 $entrega=$_POST['entrega'];
 $cantidad=$_POST['cantidad'];
 $material=$_POST['material'];
-$texto_material=$_POST['texto_material'];
+$texto_material=trim($_POST['texto_material']);
 $residencia=$_POST['residencia'];
 $obs=$_POST['obs']; 
-
+    
 
   $separar =explode('/',$_POST["fecha"]);    
          
-                $dia=trim($separar1[0]);
+                $dia=trim($separar[0]);
                  
-                $mes=trim($separar1[1]);
+                $mes=trim($separar[1]);
                
-                $anio=trim($separar1[2]);
+                $anio=trim($separar[2]);
         
                 $fecha=$anio . "-" . $mes . "-" . $dia;
                
@@ -33,7 +33,7 @@ $obs=$_POST['obs'];
 $nueva_entrega=new Salidas(array("USUARIO"=>($nuhsa),
           "FECHA"=>($fecha),
           "CENTRO"=>($centro),
-          "ENTREGA"=>($entrega),
+          "QUIEN"=>($entrega),
           "CANTIDAD"=>($cantidad),
           "MATERIAL"=>($material),
           "TEXTO_MATERIAL"=>($texto_material),
@@ -41,12 +41,12 @@ $nueva_entrega=new Salidas(array("USUARIO"=>($nuhsa),
           "OBS"=>($obs), 
           ));
         
-$nueva_entrega->NuevaSalida();
+$nueva_entrega->nuevaSalida();
 
 // Una vez grabada la salida, busco todas las salidas del usuario
 
 list($salidas_usuario)=  Salidas::getUltSalida_Usuario($nuhsa);
-   
+      
 
 $resultado="";
    
@@ -59,16 +59,18 @@ $resultado="";
 
    foreach ($salidas_usuario as $salida) {
       
-       $direccion="<a href='nueva_entrega.php?an=" . $paciente->getValue("NUHSA") . "'>" 
-               . "<img src='imagenes/icono_mas.gif'  border='none' alt='Selec'></a>";
+      // $direccion="<a href='nueva_entrega.php?an=" . $paciente->getValue("NUHSA") . "'>" 
+      //         . "<img src='imagenes/icono_mas.gif'  border='none' alt='Selec'></a>";
        
-      $resultado=$resultado . "<tr><td>" . trim($paciente->getValue("NUHSA")) . "</td><td>" . trim($paciente->getValue("NOMBRE")) . "</td><td>" . $paciente->getValue("APE1") . "</td><td>" . trim($paciente->getValue("APE2")) . "</td>";
+      $resultado=$resultado . "<tr><td>" . trim($salida->getValue("FECHA")) . "</td><td>" . trim($salida->getValue("NOMBRE_MATERIAL")) . "</td><td>" . $salida->getValue("CANTIDAD") . "</td><td>" . trim($salida->getValue("QUIEN")) . "</td><td>" . trim($salida->getValue("OBS")) . "</td>";
      // $resultado=$resultado ."<td><a href='nueva_entrega.php?an=AN001236525'><img src='imagenes/icono_mas.gif'  border='none' alt='borrar'></a></td></tr>";
     
-     $resultado=$resultado ."<td>" . $direccion .  "</td></tr>";
+      $resultado=$resultado ."<td></td></tr>";
+      
+     //$resultado=$resultado ."<td>" . $direccion .  "</td></tr>";
     
       
-   }
+   }     
        
 //$resultado2="<tr><td>Indiana</td><td>Jones</td><td>Perez</td><td>666 777 777</td><td>indiana@jones.es</td><td>Calle abastos</td></tr><tr><td>Indiana</td><td>Jones</td><td>Perez</td><td>666 777 777</td><td>indiana@jones.es</td><td>Calle abastos</td></tr>";
 

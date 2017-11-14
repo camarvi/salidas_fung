@@ -28,7 +28,7 @@ if (isset ($_GET['an'])){
 
 $muestradatos=0;
 
-
+     
 
 
 // CARGO INFORMACION COMBOX
@@ -181,6 +181,7 @@ list($listasalidasd)=  Salidas::getSalidas_Usuario($an);
             <!-- Login Form -->
             <form class="form-horizontal" role="form" action="" method="POST">
             
+                
             <!-- Username Field -->
                 
                 <div class="form-group col-xs-12">
@@ -191,7 +192,7 @@ list($listasalidasd)=  Salidas::getSalidas_Usuario($an);
                     
                     <label for="centro" class="col-xs-1"><span style="margin-right:5px;">Centro:</span></label>
                     <div class="col-xs-3">
-                       <select name="entrega" id="entrega" class="form-control"> 
+                       <select name="centro" id="centro" class="form-control"> 
                         <?php
                           foreach ($listacentros as $lcentro) {
                         ?>
@@ -216,7 +217,7 @@ list($listasalidasd)=  Salidas::getSalidas_Usuario($an);
                         ?>    
                      </select>
                     </div>   
-                    
+                       
                     <label for="cantidad" class="col-xs-1"><span style="margin-right:5px;">Cantidad:</span></label>
                     <div class="col-xs-1">
                     <input class="form-control" id="cantidad" type="text" name="cantidad" placeholder=""/>
@@ -242,6 +243,7 @@ list($listasalidasd)=  Salidas::getSalidas_Usuario($an);
                     <label for="residencia" class="col-xs-1"><span style="margin-right:5px;">Residencia:</span></label>
                     <div class="col-xs-3">
                       <select name="residencia" id="residencia" class="form-control"> 
+                          <option value="0"> </option> 
                         <?php
                           foreach ($listaresidencias as $lresidencia) {
                         ?>
