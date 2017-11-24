@@ -14,7 +14,7 @@
 
 define("DB_DSN","dblib:host=10.8.65.17;dbname=VISADO");
 
-
+     
 
 define("DB_USERNAME", "sa");
 define("DB_PASSWORD", "servidor");
