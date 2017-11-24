@@ -23,7 +23,7 @@ class Salidas  extends DataObject {
         "MATERIAL"=>"",
         "CANTIDAD"=>"",
         "RESIDENCIA"=>"",
-        "OBSERVACINES"=>"",
+        "OBSERVACIONES"=>"",
         "NOMBRE_MATERIAL"=>"",
         
      );    
@@ -100,7 +100,8 @@ class Salidas  extends DataObject {
         
         try {
             $st=$conn->prepare($sql);
-            $busqueda= '%' . utf8_decode(trim($an)) . '%';
+            //$busqueda= '%' . utf8_decode(trim($an)) . '%';
+            $busqueda= trim($an);
             $st->bindValue(":usuario",$busqueda,PDO::PARAM_STR);
             $st->execute();
             $listasalidas=array();
