@@ -121,7 +121,7 @@ class Salidas  extends DataObject {
 
     }     
      
-    
+         
    public static function getUltSalida_Usuario($an) {
 
         $conn=parent::connect();
@@ -129,7 +129,8 @@ class Salidas  extends DataObject {
         
         try {
             $st=$conn->prepare($sql);
-            $busqueda= '%' . utf8_decode(trim($an)) . '%';
+           // $busqueda= '%' . utf8_decode(trim($an)) . '%';
+            $busqueda= trim($an);
             $st->bindValue(":usuario",$busqueda,PDO::PARAM_STR);
             $st->execute();
             $listasalidas=array();

@@ -23,6 +23,7 @@ if (isset ($_GET['an'])){
     
     $fnacimiento=$paciente->getValue('DIA') . "/" . $paciente->getValue('MES') . "/" . $paciente->getValue('ANIO');
     
+    
 }
 
 
@@ -39,7 +40,7 @@ list($listaresidencias)=  Residencias::listaResidencias();
 list($listamaterial)=  Material::listaMaterial();
 
 //SALIDAS DE UN USUARIO
-list($listasalidasd)=  Salidas::getSalidas_Usuario($an);
+list($listasalidas)=  Salidas::getSalidas_Usuario($an);
 
 
 
@@ -300,8 +301,23 @@ list($listasalidasd)=  Salidas::getSalidas_Usuario($an);
                     <th class="col-xs-2">Obs</th>
                     <th class="col-xs-1"></th>
                  </tr>
-                </thead>
+                </thead>  
                 <tbody>
+                <?php 
+                  if (count($listasalidas)>0) {
+                  
+                      foreach ( $listasalidas as $lsalida) {  ?>
+                    <tr>    
+                        <td><?php echo date("d/m/Y", strtotime($lsalida->getValue('FECHA'))); ?> </td>
+                        <td><?php echo $lsalida->getValue('MATERIAL') ?></td>
+                        <td><?php echo $lsalida->getValue('CANTIDAD') ?></td>
+                        <td><?php echo $lsalida->getValue('QUIEN') ?></td>
+                        <td><?php echo $lsalida->getValue('COD') ?></td>
+                        <td></td>
+                    </tr>
+            <?php  }   
+                  } else {
+                    ?>
                  <tr>
                    <td></td>
                    <td></td>
@@ -310,7 +326,7 @@ list($listasalidasd)=  Salidas::getSalidas_Usuario($an);
                    <td></td>
                   
                 </tr>
-               
+                  <?php } ?>
                 
             
                </tbody>
