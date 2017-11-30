@@ -115,7 +115,7 @@ and open the template in the editor.
             <div class="panel-body">
                 <span id="res2"></span>  
              <div class="table-responsive">
-               <table class="table table-hover table-bordered" id="tabla">
+               <table class="table table-hover table-bordered table-condensed table-striped" id="tabla">
                 <thead>
                   <tr>
                     <th>Nuhsa</th>
