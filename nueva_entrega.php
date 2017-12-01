@@ -109,13 +109,13 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                 });
        });
        
-         $(".borrar").click(function(){
+         $(".borrar2").click(function(){
             alert ("DENTRO");
             event.preventDefault();
             $(this).closest('tr').remove();
          });
          
-        $("tabla").on('click','.borrar', function(event){
+        $("#tabla_salidas").on('click','.borrar', function(event){
             alert("dentro");
             event.preventDefault();
             $(this).closest('tr').remove(); 
@@ -160,7 +160,7 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                     <input class="form-control" id="ape2" type="text" name="ape2" value="<?php echo $paciente->getValue('APE2'); ?>"/>
                     </div>
                        
-                </div>    
+                </div>       
                
              <div class="form-group col-xs-12">
                     <label for="nuhsa" class="col-xs-1"><span style="margin-right:5px;">Nuhsa:</span></label>
@@ -305,7 +305,7 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
             <div class="panel-body">
                 <span id="res2"></span>  
              <div class="table-responsive">
-               <table class="table table-hover table-bordered table-striped table-condensed" id="tabla">
+               <table class="table table-hover table-bordered table-striped table-condensed" id="tabla_salidas">
                 <thead>
                   <tr>
                     <th class="col-xs-1">Fecha</th>
