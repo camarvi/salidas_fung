@@ -110,9 +110,17 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
        });
        
          $(".borrar").click(function(){
+            alert ("DENTRO");
             event.preventDefault();
             $(this).closest('tr').remove();
          });
+         
+        $("tabla").on('click','.borrar', function(event){
+            alert("dentro");
+            event.preventDefault();
+            $(this).closest('tr').remove(); 
+    }); 
+         
     });   
     
     
@@ -320,8 +328,8 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                         <td><?php echo $lsalida->getValue('CANTIDAD') ?></td>
                         <td><?php echo $lsalida->getValue('QUIEN') ?></td>
                         <td><?php echo $lsalida->getValue('COD') ?></td>
-                        <td> <img src="imagenes/siguiente.gif"  border="none" alt="seleccionar"></td>
-                        <td> <img src="imagenes/borrar.gif"  border="none" alt="borrar"></td>
+                        <td> <img src="imagenes/siguiente.png"  border="none" alt="seleccionar"></td>
+                        <td> <input type="button" class="borrar" value="Eliminar"/></td>
                     </tr>
             <?php  }   
                   } else {
