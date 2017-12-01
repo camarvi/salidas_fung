@@ -109,7 +109,13 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                 });
        });
        
+         $(".borrar").click(function(){
+            event.preventDefault();
+            $(this).closest('tr').remove();
+         });
     });   
+    
+    
         
     </script>
   
@@ -300,6 +306,7 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                     <th class="col-xs-2">Entregado</th>
                     <th class="col-xs-2">Obs</th>
                     <th class="col-xs-1"></th>
+                    <th class="col-xs-1"></th>
                  </tr>
                 </thead>  
                 <tbody>
@@ -313,7 +320,8 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                         <td><?php echo $lsalida->getValue('CANTIDAD') ?></td>
                         <td><?php echo $lsalida->getValue('QUIEN') ?></td>
                         <td><?php echo $lsalida->getValue('COD') ?></td>
-                        <td></td>
+                        <td> <img src="imagenes/siguiente.gif"  border="none" alt="seleccionar"></td>
+                        <td> <img src="imagenes/borrar.gif"  border="none" alt="borrar"></td>
                     </tr>
             <?php  }   
                   } else {
