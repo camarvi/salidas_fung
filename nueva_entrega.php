@@ -124,11 +124,16 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                 alert (resultado);
             });
             $(this).closest('tr').remove(); 
-    }); 
+        }); 
          
-           $(".borrar_imagen").click(function () {
-            alert("algo");
-        });
+        $("#tabla_salidas").on('click','.seleccionar', function(event){
+            alert("dentro");
+            event.preventDefault();
+            var cod_material = $(this).parents("tr").find("td").eq(6).text();
+            $("#material option[value="+ cod_material +"]").attr("selected",true);
+            
+        });  
+         
          
          
     });   
@@ -343,9 +348,10 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                         <td><?php echo $lsalida->getValue('OBSERVACIONES') ?></td>
                         <td class="hidden-md hidden-lg hidden-sm hidden-xs"><?php echo $lsalida->getValue('COD') ?></td>
                         <td class="hidden-md hidden-lg hidden-sm hidden-xs"><?php echo $lsalida->getValue('MATERIAL') ?></td>
-                       <td> <img src="imagenes/siguiente.png"  border="none" alt="seleccionar"></td>  
-                       <td> <img src="imagenes/borrar.gif" class="borrar_imagen" border="none" alt="Eliminar"></td> 
-                     <!--   <td> <input type="button" class="borrar btn-danger" value="Eliminar"/></td>  -->
+                     <!--  <td> <img src="imagenes/siguiente.png"  border="none" alt="seleccionar"></td>  
+                       <td> <img src="imagenes/borrar.gif" class="borrar_imagen" border="none" alt="Eliminar"></td>  -->
+                       <td> <input type="button" class="seleccionar btn-success" value="Seleccionar"/></td>  
+                       <td> <input type="button" class="borrar btn-danger" value="Eliminar"/></td>  
                       
                     </tr>
             <?php  }   
