@@ -109,17 +109,27 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                 });
        });
        
-         $(".borrar2").click(function(){
-            alert ("DENTRO");
-            event.preventDefault();
-            $(this).closest('tr').remove();
-         });
+      //   $(".borrar2").click(function(){
+      //      alert ("DENTRO");
+      //      event.preventDefault();
+      //      $(this).closest('tr').remove();
+      //   });
          
         $("#tabla_salidas").on('click','.borrar', function(event){
             alert("dentro");
             event.preventDefault();
+            var cod_salida = $(this).parents("tr").find("td").eq(5).text();
+            $.post("elimina_entrega.php",{
+                cod_salida:cod_salida},function(resultado){
+                alert (resultado);
+            });
             $(this).closest('tr').remove(); 
     }); 
+         
+           $(".borrar_imagen").click(function () {
+            alert("algo");
+        });
+         
          
     });   
     
@@ -309,12 +319,15 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                 <thead>
                   <tr>
                     <th class="col-xs-1">Fecha</th>
+                    
                     <th class="col-xs-5">Material</th>
                     <th class="col-xs-1">Cantidad</th>
                     <th class="col-xs-2">Entregado</th>
                     <th class="col-xs-2">Obs</th>
+                    <th class="hidden-md hidden-lg hidden-sm hidden-xs" ></th>
+                    <th class="hidden-md hidden-lg hidden-sm hidden-xs" ></th>
                     <th class="col-xs-1"></th>
-                    <th class="col-xs-1"></th>
+                    <th class="col-xs-1"></th>class="hidden-md hidden-lg hidden-sm hidden-xs"
                  </tr>
                 </thead>  
                 <tbody>
@@ -327,9 +340,13 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                         <td><?php echo $lsalida->getValue('NOMBRE_MATERIAL') ?></td>
                         <td><?php echo $lsalida->getValue('CANTIDAD') ?></td>
                         <td><?php echo $lsalida->getValue('QUIEN') ?></td>
-                        <td><?php echo $lsalida->getValue('COD') ?></td>
-                        <td> <img src="imagenes/siguiente.png"  border="none" alt="seleccionar"></td>
-                        <td> <input type="button" class="borrar" value="Eliminar"/></td>
+                        <td><?php echo $lsalida->getValue('OBSERVACIONES') ?></td>
+                        <td class="hidden-md hidden-lg hidden-sm hidden-xs"><?php echo $lsalida->getValue('COD') ?></td>
+                        <td class="hidden-md hidden-lg hidden-sm hidden-xs"><?php echo $lsalida->getValue('MATERIAL') ?></td>
+                       <td> <img src="imagenes/siguiente.png"  border="none" alt="seleccionar"></td>  
+                       <td> <img src="imagenes/borrar.gif" class="borrar_imagen" border="none" alt="Eliminar"></td> 
+                     <!--   <td> <input type="button" class="borrar btn-danger" value="Eliminar"/></td>  -->
+                      
                     </tr>
             <?php  }   
                   } else {

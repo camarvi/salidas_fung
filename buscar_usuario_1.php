@@ -82,6 +82,22 @@ and open the template in the editor.
                 });
        });
        
+       
+          $("#tabla").on('click','.borrar', function(event){
+            alert("dentro");
+            var valor0 = $(this).parents("tr").find("td").eq(0).text();
+            alert (valor0);
+             var valor1 = $(this).parents("tr").find("td").eq(3).text();
+            alert (valor1);
+            event.preventDefault();
+            //$(this).closest('tr').remove(); 
+    }); 
+       
+       
+       $(".ImagenGeneradaDinamicamente").click(function () {
+            alert("algo");
+        });
+       
     });   
         
     </script>
@@ -131,8 +147,13 @@ and open the template in the editor.
                       <button type="button" id="modificar" name="modificar" value="modificar" class="botoncentrado">
                     Modificar
                  </button>  
+                      <button type="submit" class="btn btn-primary" name="B1"><span class="glyphicon glyphicon-check"></span> Comprar</button>      
+                           <button type="submit" class="btn btn-primary" name="B1"><span class="glyphicon glyphicon-remove"></span> Comprar</button>      
+                 
                     </div>
                 </div>
+                
+                
                 
             </form>
             <!-- End of Login Form -->
@@ -154,6 +175,8 @@ and open the template in the editor.
                     <th>Móvil</th>
                     <th>Email</th>
                     <th>Dirección</th>
+                    <th></th>
+                    <th></th>
                  </tr>
                 </thead>
                 <tbody>
@@ -164,6 +187,8 @@ and open the template in the editor.
                    <td>666 666 666</td>
                    <td>Rocky@balboa.es</td>
                    <td>Calle la paz</td>
+                     <td> <img src="imagenes/siguiente.png"  class="ImagenGeneradaDinamicamente" border="none" alt="seleccionar"></td>
+                     <td> <input type="button" class="borrar btn-success" value="Eliminar"/></td>
                 </tr>
                
                 <tr>
@@ -173,6 +198,15 @@ and open the template in the editor.
                    <td>666 777 777</td>
                    <td>indiana@jones.es</td>
                    <td>Calle abastos</td>
+                   <td> <img src="imagenes/siguiente.png"  class="ImagenGeneradaDinamicamente" border="none" alt="seleccionar"></td>
+                   <td> 
+                       <button type="button" class="borrar btn btn-default btn-xs btn-primary ">
+                             <span class="glyphicon glyphicon-check"></span>
+                           Eliminar
+                       </button>
+                  <!--     <input type="button" class="borrar" value="Eliminar"/> -->
+                         
+                   </td>
                 </tr>
             
                </tbody>

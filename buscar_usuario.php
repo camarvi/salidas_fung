@@ -98,7 +98,8 @@ and open the template in the editor.
                 <div class="row">
                     <div class="form-group col-xs-12">
                         <button type="button" id="buscar" name="buscar" value="buscar" class="btn btn-primary col-xs-offset-5 col-xs-2">
-                          BUSCAR PACIENTE
+                        <span class="glyphicon glyphicon-search"></span>
+                            Buscar Usuario
                       </button>   
                   
                     </div>
