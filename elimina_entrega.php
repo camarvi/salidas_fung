@@ -5,12 +5,16 @@ require_once ("common.inc.php");
         
 $cod_salida=$_POST['cod_salida'];
 
+Salidas::EliminaSalida($cod_salida);
 
-$elimina_salida=new Salidas(array("COD"=>($cod_salida),
-          ));
+ 
+
+
+//$elimina_salida=new Salidas(array("COD"=>($cod_salida),));
         
-$elimina_salida->EliminaSalida($cod);
+//$elimina_salida->EliminaSalida($cod);
 
+          
 $resultado="Salida Elimina";
    
 

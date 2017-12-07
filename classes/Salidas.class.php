@@ -48,7 +48,6 @@ class Salidas  extends DataObject {
             $st->bindValue(":CANTIDAD",$this->data["CANTIDAD"], PDO::PARAM_INT); 
             $st->bindValue(":RESIDENCIA",$this->data["RESIDENCIA"], PDO::PARAM_INT); 
             $st->bindValue(":OBSERVACIONES",$this->data["OBSERVACIONES"], PDO::PARAM_STR);
-            $st->bindValue(":NOMBRE_MATERIAL",$this->data["NOMBRE_MATERIAL"], PDO::PARAM_STR);
             
             $st->execute();
             parent::disconnect($conn);

@@ -97,8 +97,7 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                  centro:centro,
                  entrega:entrega,
                  cantidad:cantidad,
-                 material:material,
-                 texto_material:texto_material,
+                 material:material,               
                  residencia:residencia,
                  obs:obs},
                 function(htmlexterno){
@@ -295,11 +294,12 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                     <div class="col-xs-3">
                       <button id="grabar" name="grabar" value="grabar" class="btn btn-primary ">
                           Grabar
-                      </button>   
-                      <button id="inicio" name="inicio" value="inicio" class="btn btn-primary col-lg-offset-2">
+                      </button>  
+                        <a href="buscar_usuario.php">  Inicio </a>
+                        <button id="inicio" name="inicio" value="inicio" class="btn btn-primary col-lg-offset-2" onclick="window.open('buscar_usuario.php')">
                           Inicio
                       </button>   
-                        
+                      
                     </div>
                 </div>
             
@@ -332,7 +332,7 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                     <th class="hidden-md hidden-lg hidden-sm hidden-xs" ></th>
                     <th class="hidden-md hidden-lg hidden-sm hidden-xs" ></th>
                     <th class="col-xs-1"></th>
-                    <th class="col-xs-1"></th>class="hidden-md hidden-lg hidden-sm hidden-xs"
+                    <th class="col-xs-1"></th>
                  </tr>
                 </thead>  
                 <tbody>
@@ -350,8 +350,8 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                         <td class="hidden-md hidden-lg hidden-sm hidden-xs"><?php echo $lsalida->getValue('MATERIAL') ?></td>
                      <!--  <td> <img src="imagenes/siguiente.png"  border="none" alt="seleccionar"></td>  
                        <td> <img src="imagenes/borrar.gif" class="borrar_imagen" border="none" alt="Eliminar"></td>  -->
-                       <td> <input type="button" class="seleccionar btn-success" value="Seleccionar"/></td>  
-                       <td> <input type="button" class="borrar btn-danger" value="Eliminar"/></td>  
+                       <td> <input type="button" class="seleccionar btn-success" value="Selecc."/></td>  
+                       <td> <input type="button" class="borrar btn-danger" value="Borrar"/></td>  
                       
                     </tr>
             <?php  }   
