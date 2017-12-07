@@ -89,7 +89,7 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
              var entrega=$('#entrega').val();
              var cantidad=$('#cantidad').val();
              var material=$('#material').val();
-             var texto_material=$('#material option:selected').html();
+            // var texto_material=$('#material option:selected').html();
              var residencia=$('#residencia').val();
              var obs=$('#obs').val(); 
             
