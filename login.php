@@ -16,7 +16,7 @@ and open the template in the editor.
 
 require_once ("common.inc.php");
 //require_once ('Usuario.class.php');
-
+session_start();
 
 if (isset ($_POST["enviapass"])) {
 
@@ -31,16 +31,16 @@ if (isset ($_POST["enviapass"])) {
    try {
      if (isset($loginusuario))    {
        
-          $_SESSION["usuario"]=$loginusuario;
+          $_SESSION['usuario']=$loginusuario;
            echo '<script>document.location = "buscar_usuario.php"</script>';
 
      }   else {
-         $_SESSION["usuario"]="";
+         $_SESSION['usuario']="";
         echo '<script>document.location = "login.php"</script>';
 
      }
    } catch (Exception $e) {
-        $_SESSION["usuario"]="";
+        $_SESSION['usuario']="";
          echo '<script>document.location = "login.php"</script>';
 
    }
@@ -61,7 +61,7 @@ if (isset ($_POST["enviapass"])) {
     <head>
       
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>Control de Material Fungible</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -117,7 +117,6 @@ if (isset ($_POST["enviapass"])) {
                 <div class="row">
                     <div class="form-group col-xs-4">
                          <input class="btn btn-primary" type="submit" name="enviapass" value="Enviar" />
-                        <button class="btn btn-primary" type="submit" id="enviapass">Aceptar</button>
                     </div>
                 </div>
                 

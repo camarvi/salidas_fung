@@ -9,8 +9,10 @@ and open the template in the editor.
 
 <?php
 //require_once ("plantilla.php");
+
+require_once ("config.php");
 require_once ("common.inc.php");
-   
+session_start();   
 
 compruebaUsuario();
 

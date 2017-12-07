@@ -7,7 +7,9 @@ and open the template in the editor.
 <!DOCTYPE html>
 
 <?php   
-
+require_once ("config.php");
+require_once ("common.inc.php");
+session_start();
 compruebaUsuario();
 
 ?>
