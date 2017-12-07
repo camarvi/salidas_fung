@@ -8,7 +8,7 @@ require_once ('classes/Quien.class.php');
 require_once ('classes/Residencias.class.php');
 require_once ('classes/Salidas.class.php');
 require_once ('classes/Sexo.class.php');
-require_once ('classes/Usuarios.class.php');
+require_once ('classes/Usuario.class.php');
 
   
 

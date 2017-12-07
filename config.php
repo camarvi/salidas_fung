@@ -30,6 +30,7 @@ define("TBL_UGC","ZONAS");
 define("TBL_RESIDENCIAS","RESIDENCIAS");
 define("TBL_QUIEN","FUNG_QUIEN");
 define("TBL_MATERIAL","MATERIAL_FUNG");
+DEFINE("TBL_USUARIOS","usuarios");
 
 
 define( "ROOT", $_SERVER['HTTP_HOST']);

@@ -19,7 +19,7 @@ class Usuario extends DataObject{
       protected  $data=array(
         "ID"=>"",
         "NOMBRE"=>"",
-        "CODZBS"=>""    
+        "CODZONA"=>""    
         
         );
       
@@ -27,9 +27,9 @@ class Usuario extends DataObject{
     public static function autentificar ($username,$password) {
 
          
-        $conn=  parent::connectPersonal();
-        $sql="SELECT ID,NOMBRE,CODZBS FROM " . TBL_USUARIOS . " WHERE USUARIO=:username
-            AND CLAVE=:password AND ACTIVO=1 AND HISTORIAS_CM>0";
+        $conn=  parent::connect();
+        $sql="SELECT ID,NOMBRE,CODZONA FROM " . TBL_USUARIOS . " WHERE USUARIO=:username
+            AND CLAVE=:password AND ABSORVENTES>0";
 
         try{
             $st=$conn->prepare($sql);

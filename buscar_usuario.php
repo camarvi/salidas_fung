@@ -13,7 +13,7 @@ compruebaUsuario();
 ?>
 
 
-<htm>
+<html>
     
     <head>
       

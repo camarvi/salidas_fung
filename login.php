@@ -13,17 +13,17 @@ and open the template in the editor.
  */               
          
 
-require_once ("plantilla.php");
+
 require_once ("common.inc.php");
-require_once ('Usuario.class.php');
+//require_once ('Usuario.class.php');
 
 
 if (isset ($_POST["enviapass"])) {
 
     
-
+    
       $username= preg_replace("/[^ \-\_a-zA-Z0-9]/","", $_POST["usuario"]);
-      $passusaurio= preg_replace("/[^ \-\_a-zA-Z0-9]/","", $_POST["pass"]);
+      $passusaurio= preg_replace("/[^ \-\_a-zA-Z0-9]/","", $_POST["password"]);
 
          
       $loginusuario=Usuario::autentificar($username,$passusaurio);
@@ -32,7 +32,7 @@ if (isset ($_POST["enviapass"])) {
      if (isset($loginusuario))    {
        
           $_SESSION["usuario"]=$loginusuario;
-           echo '<script>document.location = "nueva_entrega.php"</script>';
+           echo '<script>document.location = "buscar_usuario.php"</script>';
 
      }   else {
          $_SESSION["usuario"]="";
@@ -47,7 +47,7 @@ if (isset ($_POST["enviapass"])) {
 
 }
 
-  asignaEncabezado();
+ // asignaEncabezado();
 
     ?>
 
@@ -83,12 +83,12 @@ if (isset ($_POST["enviapass"])) {
             <div class="panel-body">
             
             <!-- Login Form -->
-            <form role="form">
+            <form role="form" name="login" action="login.php" method="POST">
             
             <!-- Username Field -->
                 <div class="row">
                     <div class="form-group col-xs-12">
-                    <label for="username"><span class="text-danger" style="margin-right:5px;">*</span>Usuario:</label>
+                    <label for="usuario"><span class="text-danger" style="margin-right:5px;">*</span>Usuario:</label>
                         <div class="input-group">
                             <input class="form-control" id="usuario" type="text" name="usuario" placeholder="usuario" required/>
                             <span class="input-group-btn">
@@ -116,6 +116,7 @@ if (isset ($_POST["enviapass"])) {
                 <!-- Login Button -->
                 <div class="row">
                     <div class="form-group col-xs-4">
+                         <input class="btn btn-primary" type="submit" name="enviapass" value="Enviar" />
                         <button class="btn btn-primary" type="submit" id="enviapass">Aceptar</button>
                     </div>
                 </div>
