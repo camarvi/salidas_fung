@@ -6,6 +6,56 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 
+<?php
+   
+/*
+ * Ventana de inicio del portal
+ */               
+         
+
+require_once ("plantilla.php");
+require_once ("common.inc.php");
+require_once ('Usuario.class.php');
+
+
+if (isset ($_POST["enviapass"])) {
+
+    
+
+      $username= preg_replace("/[^ \-\_a-zA-Z0-9]/","", $_POST["usuario"]);
+      $passusaurio= preg_replace("/[^ \-\_a-zA-Z0-9]/","", $_POST["pass"]);
+
+         
+      $loginusuario=Usuario::autentificar($username,$passusaurio);
+      
+   try {
+     if (isset($loginusuario))    {
+       
+          $_SESSION["usuario"]=$loginusuario;
+           echo '<script>document.location = "nueva_entrega.php"</script>';
+
+     }   else {
+         $_SESSION["usuario"]="";
+        echo '<script>document.location = "login.php"</script>';
+
+     }
+   } catch (Exception $e) {
+        $_SESSION["usuario"]="";
+         echo '<script>document.location = "login.php"</script>';
+
+   }
+
+}
+
+  asignaEncabezado();
+
+    ?>
+
+
+
+
+
+
 <htm>
     
     <head>
@@ -66,7 +116,7 @@ and open the template in the editor.
                 <!-- Login Button -->
                 <div class="row">
                     <div class="form-group col-xs-4">
-                        <button class="btn btn-primary" type="submit">Aceptar</button>
+                        <button class="btn btn-primary" type="submit" id="enviapass">Aceptar</button>
                     </div>
                 </div>
                 

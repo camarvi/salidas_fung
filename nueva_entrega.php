@@ -12,7 +12,7 @@ and open the template in the editor.
 require_once ("common.inc.php");
    
 
-//compruebaUsuario();
+compruebaUsuario();
 
 
 if (isset ($_GET['an'])){
@@ -115,7 +115,7 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
       //   });
          
         $("#tabla_salidas").on('click','.borrar', function(event){
-            alert("dentro");
+           
             event.preventDefault();
             var cod_salida = $(this).parents("tr").find("td").eq(5).text();
             $.post("elimina_entrega.php",{
@@ -126,10 +126,12 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
         }); 
          
         $("#tabla_salidas").on('click','.seleccionar', function(event){
-            alert("dentro");
+           
             event.preventDefault();
             var cod_material = $(this).parents("tr").find("td").eq(6).text();
+            var cod_quien = $(this).parents("tr").find("td").eq(7).text();
             $("#material option[value="+ cod_material +"]").attr("selected",true);
+            $("#entrega option[value="+ cod_quien +"]").attr("selected",true);
             
         });  
          
@@ -295,7 +297,7 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                       <button id="grabar" name="grabar" value="grabar" class="btn btn-primary ">
                           Grabar
                       </button>  
-                        <a href="buscar_usuario.php">  Inicio </a>
+                      
                         <button id="inicio" name="inicio" value="inicio" class="btn btn-primary col-lg-offset-2" onclick="window.open('buscar_usuario.php')">
                           Inicio
                       </button>   
@@ -331,6 +333,7 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                     <th class="col-xs-2">Obs</th>
                     <th class="hidden-md hidden-lg hidden-sm hidden-xs" ></th>
                     <th class="hidden-md hidden-lg hidden-sm hidden-xs" ></th>
+                    <th class="hidden-md hidden-lg hidden-sm hidden-xs" ></th>
                     <th class="col-xs-1"></th>
                     <th class="col-xs-1"></th>
                  </tr>
@@ -344,10 +347,11 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                         <td><?php echo date("d/m/Y", strtotime($lsalida->getValue('FECHA'))); ?> </td>
                         <td><?php echo $lsalida->getValue('NOMBRE_MATERIAL') ?></td>
                         <td><?php echo $lsalida->getValue('CANTIDAD') ?></td>
-                        <td><?php echo $lsalida->getValue('QUIEN') ?></td>
+                        <td><?php echo $lsalida->getValue('NOMBRE_QUIEN') ?></td>
                         <td><?php echo $lsalida->getValue('OBSERVACIONES') ?></td>
                         <td class="hidden-md hidden-lg hidden-sm hidden-xs"><?php echo $lsalida->getValue('COD') ?></td>
                         <td class="hidden-md hidden-lg hidden-sm hidden-xs"><?php echo $lsalida->getValue('MATERIAL') ?></td>
+                        <td class="hidden-md hidden-lg hidden-sm hidden-xs"><?php echo $lsalida->getValue('QUIEN') ?></td>
                      <!--  <td> <img src="imagenes/siguiente.png"  border="none" alt="seleccionar"></td>  
                        <td> <img src="imagenes/borrar.gif" class="borrar_imagen" border="none" alt="Eliminar"></td>  -->
                        <td> <input type="button" class="seleccionar btn-success" value="Selecc."/></td>  

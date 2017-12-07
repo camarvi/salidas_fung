@@ -6,6 +6,13 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 
+<?php   
+
+compruebaUsuario();
+
+?>
+
+
 <htm>
     
     <head>

@@ -25,6 +25,7 @@ class Salidas  extends DataObject {
         "RESIDENCIA"=>"",
         "OBSERVACIONES"=>"",
         "NOMBRE_MATERIAL"=>"",
+        "NOMBRE_QUIEN"=>"",
         
      );    
 
