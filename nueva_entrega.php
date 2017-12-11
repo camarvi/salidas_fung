@@ -132,11 +132,15 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
             event.preventDefault();
             var cod_material = $(this).parents("tr").find("td").eq(6).text();
             var cod_quien = $(this).parents("tr").find("td").eq(7).text();
+            var cod_residencia = $(this).parents("tr").find("td").eq(8).text();
+            var cod_centro = $(this).parents("tr").find("td").eq(9).text();
             $("#material option[value="+ cod_material +"]").attr("selected",true);
             $("#entrega option[value="+ cod_quien +"]").attr("selected",true);
+            $("#residencia option[value="+ cod_residencia +"]").attr("selected",true);
+            $("#centro option[value="+ cod_centro +"]").attr("selected",true);
             
         });  
-         
+              
          
          
     });   
@@ -336,6 +340,8 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                     <th class="hidden-md hidden-lg hidden-sm hidden-xs" ></th>
                     <th class="hidden-md hidden-lg hidden-sm hidden-xs" ></th>
                     <th class="hidden-md hidden-lg hidden-sm hidden-xs" ></th>
+                    <th class="hidden-md hidden-lg hidden-sm hidden-xs" ></th>
+                    <th class="hidden-md hidden-lg hidden-sm hidden-xs" ></th>
                     <th class="col-xs-1"></th>
                     <th class="col-xs-1"></th>
                  </tr>
@@ -354,7 +360,9 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                         <td class="hidden-md hidden-lg hidden-sm hidden-xs"><?php echo $lsalida->getValue('COD') ?></td>
                         <td class="hidden-md hidden-lg hidden-sm hidden-xs"><?php echo $lsalida->getValue('MATERIAL') ?></td>
                         <td class="hidden-md hidden-lg hidden-sm hidden-xs"><?php echo $lsalida->getValue('QUIEN') ?></td>
-                     <!--  <td> <img src="imagenes/siguiente.png"  border="none" alt="seleccionar"></td>  
+                        <td class="hidden-md hidden-lg hidden-sm hidden-xs"><?php echo $lsalida->getValue('RESIDENCIA') ?></td>
+                        <td class="hidden-md hidden-lg hidden-sm hidden-xs"><?php echo $lsalida->getValue('CENTRO') ?></td>                        
+<!--  <td> <img src="imagenes/siguiente.png"  border="none" alt="seleccionar"></td>  
                        <td> <img src="imagenes/borrar.gif" class="borrar_imagen" border="none" alt="Eliminar"></td>  -->
                        <td> <input type="button" class="seleccionar btn-success" value="Selecc."/></td>  
                        <td> <input type="button" class="borrar btn-danger" value="Borrar"/></td>  
