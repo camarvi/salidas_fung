@@ -303,10 +303,12 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                       <button id="grabar" name="grabar" value="grabar" class="btn btn-primary ">
                           Grabar
                       </button>  
-                      
+                    <!--  
                         <button id="inicio" name="inicio" value="inicio" class="btn btn-primary col-lg-offset-2" onclick="window.open('buscar_usuario.php')">
                           Inicio
                       </button>   
+                      -->  
+                        <a class="btn btn-info col-lg-offset-2" href="buscar_usuario.php">Inicio</a>  
                       
                     </div>
                 </div>
