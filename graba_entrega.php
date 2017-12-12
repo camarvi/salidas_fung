@@ -38,7 +38,7 @@ $nueva_entrega=new Salidas(array("USUARIO"=>($nuhsa),
           "MATERIAL"=>($material),
           "TEXTO_MATERIAL"=>($texto_material),
           "RESIDENCIA"=>($residencia),
-          "OBSERVACIONES"=>(html_entity_decode($obs)), 
+          "OBSERVACIONES"=>(utf8_decode($obs)), 
           ));
         
 $nueva_entrega->nuevaSalida();
