@@ -106,9 +106,10 @@ list($listasalidas)=  Salidas::getSalidas_Usuario($an);
                 //   alert (htmlexterno);
                 
                 //   $("#resultado").html('<tr><td>Indiana</td><td>Jones</td><td>Perez</td><td>666 777 777</td><td>indiana@jones.es</td><td>Calle abastos</td></tr>'); // html(htmlexterno);
-                   $("#tabla tr:first").after(htmlexterno);
+                //   $("#tabla tr:first").after(htmlexterno);
+                $("#tabla_salidas tr:first").after(htmlexterno);
                 });
-       });
+       });    
        
       //   $(".borrar2").click(function(){
       //      alert ("DENTRO");
