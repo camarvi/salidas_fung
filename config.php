@@ -3,21 +3,19 @@
  * DEFINO LAS CONSTANTES QUE UTILIZO EN EL PROGRAMA
  */
 
-// DATOS CONEXON POR MYSQL
-//define("DB_DSN","mysql:host=10.8.65.9;dbname=SUCESOS");
-//define("DB_DSN","mysql:dbname=web");
+
    
 
 
 // CONEXION AL SERVIDOR SQL SERVER
 
 
-define("DB_DSN","dblib:host=10.8.65.17;dbname=VISADO");
+define("DB_DSN","dblib:host=10.0.0.1;dbname=xxxxx");
 
      
 
-define("DB_USERNAME", "sa");
-define("DB_PASSWORD", "servidor");
+define("DB_USERNAME", "xxx");
+define("DB_PASSWORD", "xxxxxxx");
 define("PAGE_SIZE", 5);
     
 
